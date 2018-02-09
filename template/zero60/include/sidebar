@@ -1,0 +1,20 @@
+<aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        {{ FOREACH CHAPTER_ARCHIVE.sort('name') }}
+        <li>
+        {{ FOREACH post IN posts.sort }}
+        {{ IF loop.index == 0 }}
+          <span class="season">{{ ENTRIES.$post.chaptername }}</span>
+          <ul>
+        {{ END }}
+            <li>
+              <a href="{{ ENTRIES.$post.url }}">- {{ ENTRIES.$post.title }}</a>
+            </li>
+        {{ END }}
+        </ul>
+        </li>
+        {{ END }}
+    </ul>
+  </div>
+</aside>

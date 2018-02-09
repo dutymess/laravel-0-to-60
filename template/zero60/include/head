@@ -1,0 +1,32 @@
+
+{{ IF IS_POST }}
+	{{ this_page_title = "$TITLE | $PostTITLE" }}
+{{ ELSE }}
+	{{ this_page_title = PageTITLE }}
+{{ END }}
+
+<!DOCTYPE html>
+<html lang="{{ SITE.language }}">
+<head>
+<title>{{ this_page_title }}</title>
+
+<meta charset="utf-8">
+<meta name="description" content="{{ DESCRIPTION }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ TitleContent }}">
+<meta property="og:url" content="{{ URL }}">
+<meta property="og:site_name" content="{{ TITLE }}">
+<meta property="og:description" content="{{ HeadDesc | html }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ TitleContent }}">
+<meta name="twitter:description" content="{{ HeadDesc | html | truncate(50) }}">
+
+  <link rel="short icon" href="{{ SITE.icon }}">
+  <link href="{{ MainSTATIC }}/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="{{ MainSTATIC }}/zero60/style.css" rel="stylesheet">
+  <link href="{{ MainSTATIC }}/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>

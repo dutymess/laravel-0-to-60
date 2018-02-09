@@ -1,0 +1,27 @@
+
+title: Laravel, Zero to 60
+description: An Introduction to the Laravel World
+
+author: Taha Kamkar
+email: chieftaha@gmail.com
+
+timezone: +03:30
+
+url: https://dutymess.github.io/laravel-0-to-60
+root: /laravel-0-to-60
+static: /laravel-0-to-60/static
+imageurl: /laravel-0-to-60/static/img
+permalink: :year/:month/:day/:title/
+
+
+default_markup: mmd
+
+post_num: all
+
+archive_post_num: all
+
+default_floor: laravel
+
+template: zero60
+
+lists:

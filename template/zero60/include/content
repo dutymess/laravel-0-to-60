@@ -1,0 +1,25 @@
+<div class="section" id="content">
+{{ IF IS_POST }}
+  {{ FOREACH post IN POSTS }}
+      {{ IF loop.prev.chaptername != post.chaptername }}
+          <h1 class="list">{{ post.chaptername }}</h1>
+      {{ END }}
+
+    <h3 class="list">{{ post.title }}</h3>
+
+    <div class="content-body content">
+    {{ post.body.more }}
+    </div>
+  {{ END }}
+{{ ELSE }}
+  <h1 class="cover">{{ SITE.title }}</h1>
+  <h2 class="cover">{{ SITE.description }}</h2>
+{{ END }}
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    {{ INCLUDE navigator }}
+    </nav>
+</div>

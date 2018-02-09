@@ -1,0 +1,26 @@
+title: لاراول، از صفر تا شصت
+description: راهنمایی گام به گام برای ورود به دنیای لاراول
+
+author: taha
+email: taha.kamkar@gmail.com
+
+url: https://dutymess.github.io/laravel-0-to-60/
+root: /laravel-0-to-60
+
+language: Farsi
+icon: /static/img/mira.png
+
+permalink: chapter:chapter/lesson:part/:title/
+
+default_markup: mmd
+
+post_num: all
+
+archive_post_num: all
+
+template: zero60
+
+lists:
+  - chapter
+
+namespace:
