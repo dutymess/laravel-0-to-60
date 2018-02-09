@@ -1,14 +1,1 @@
-  {{ INCLUDE head }}
-
-  {{ INCLUDE header }}
-
-  <section class="main-content columns is-fullheight">
-    {{ INCLUDE sidebar }}
-
-    <div class="container column">
-        {{ INCLUDE content }}
-    </div>
-
-  </section>
-
-  {{ INCLUDE footer }}
+salam
