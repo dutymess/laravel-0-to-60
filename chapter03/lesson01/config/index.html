@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+<title>لاراول، از صفر تا شصت | درس ۱: پیکربندی‌ها در لاراول</title>
+
+<meta charset="utf-8">
+<meta name="description" content="راهنمایی گام به گام برای ورود به دنیای لاراول">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://dutymess.github.io/laravel-0-to-60">
+<meta property="og:site_name" content="لاراول، از صفر تا شصت">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+
+  <link rel="short icon" href="/static/img/mira.png">
+  <link href="/laravel-0-to-60/static/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/style.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <header class="hero is-info columns">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+              <a href="/laravel-0-to-60">
+                لاراول، از صفر تا شصت
+              </a>
+            </h1>
+            <h2 class="subtitle">راهنمایی گام به گام برای ورود به دنیای لاراول</h2>
+        </div>
+    </div>
+    <span class="sidebar_toggle">
+        <em class="open-icon"></em>
+    </span>
+</header>
+
+  <section class="main-content columns is-fullheight">
+    <aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        
+        <li>
+        
+        
+          <span class="season">پیشگفتار</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson01/preface/">- ماجرای این کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson02/thanks/">- تشکر می‌کنم</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson03/support/">- حمایت از کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">- بازخورد</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/">- انتشار کتاب</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل اول: پیش به سوی صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson01/install/">- درس ۱:‌ معماری MVC</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل دوم: لاراول، در حد صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson01/install/">- درس ۱:‌ نصب و راه اندازی لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson02/folders/">- درس ۲: ساختار پوشه‌ها</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson03/artisan/">- درس ۳: کنسول آرتیزان</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson04/inbox/">- درس ۴: نگاهی به داخل جعبه</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل سوم: شروع واقعی با دیتابیس</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson01/config/">- درس ۱: پیکربندی‌ها در لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson02/database/">- درس ۲: پیکربندی دیتابیس</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson03/migrations/">- درس ۳: مایگریشن</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+    </ul>
+  </div>
+</aside>
+
+    <div class="container column">
+        <div class="section" id="content">
+
+  
+      
+          <h1 class="list">فصل سوم: شروع واقعی با دیتابیس</h1>
+      
+
+    <h3 class="list">درس ۱: پیکربندی‌ها در لاراول</h3>
+
+    <div class="content-body content">
+    <a name="more"></a>
+<p>در فصل پیش، هنگامی که از نصب لاراول سخن می‌گفتیم، نگاهی به پوشه‌ی پیکربندی (config) انداختیم و تغییراتی ایجاد کردیم. حالا وقت آن رسیده که بیشتر وارد جزئیات شویم و یک پروژه‌ی واقعی را در کنار هم شروع کنیم.</p>
+
+<p>شروع پروژه‌ها همیشه با تعریف و راه‌اندازی دیتابیس آغاز می‌شود و ما نیز همین راه را خواهیم رفت و برای همین هم این فصل «شروع واقعی با دیتابیس» نام دارد.
+اما می‌دانید که پیش از دیتابیس چه کار دیگری هست که معمولاً انجام می‌شود؟ راه‌اندازی پیکربندی.</p>
+
+<h2>یک توجیه کوچک</h2>
+
+<p>این که چرا درس پیکربندی را در فصل مربوط به دیتابیس این کتاب گنجانده‌ام، نیازمند کمی توضیح است. زیرا شما که این کتاب را می‌خوانید، برنامه‌نویس هستید و قاعدتاً از هوشی بالاتر از سطح متوسط برخوردار هستید و به این راحتی نمی‌توان سرتان کلاه گذاشت.
+واقیت آن است که پیکربندی‌ها هم به لحاظ کاربردی، شبیه دیتابیس‌ها هستند، با این تفاوت که داده‌های آن‌ها، در زمان کدنویسی تعیین می‌شوند و در هنگام اجرای برنامه قابل تغییر نیستند. یا لااقل به این راحتی‌ها قابل تغییر نیستند. 
+بنابراین ما اولین گام عملی در پروژه‌ی آپولو هوا کردن خودمان در این کتاب را با تنظیم دیتابیس شروع می‌کنیم و اولین درس تنظیم دیتابیس را به پیکربندی اختصاص می‌دهیم<a href="#fn:c030101" id="fnref:c030101" class="footnote">1</a>.</p>
+
+<h2>محل پیکربندی</h2>
+
+<p>همه‌ی فایل‌های پیکربندی لاراول در پوشه‌ی config قرار دارند. هر کدام از این فایل‌ها، به کاری اختصاص دارند که حدس آن کار از روی نامشان زیاد سخت نیست و من بنا ندارم اسم‌هایشان را بنویسم و شرح فارسی‌شان را بازگویی کنم. هر کسی قادر است حدس بزند فایلی که session نام دارد به چه دردی می‌خورد.</p>
+
+<p>شما هم می‌توانید فایل‌های خود را بسازید و داده‌هایی که نیاز دارید را در آن‌ها بریزید و خیالتان راحت باشد که این داده‌ها، همه جا در دسترس شما هستند.</p>
+
+<h2>مقداردهی</h2>
+
+<p>فایل‌های پیکربندی لاراول، در واقع فایل‌هایی به زبان پی‌اچ‌پی هستند که یک آرایه را بازمی‌گردانند، یا به اصطلاح فنی‌تر، return می‌کنند.</p>
+
+<p>برای شروع، فایلی به نام apollo.php کنار فایل‌های دیگر پوشه config ایجاد کنید و آرایه‌ای خالی را در آن return کنید.</p>
+
+<pre><code class="language-php">&lt;?php
+  return [
+  ];
+</code></pre>
+
+<p>حالا شما یک فایل پیکربندی برای خودتان دارید که می‌توانید هرچه خواستید در آن بریزید. </p>
+
+<pre><code class="language-php">&lt;?php // config/apollo.php
+  return [
+    "book_name" =&gt; "Laravel, Zero to Sixty",
+    "author_name" =&gt; "Taha Kamkar",
+    "length_measuring_unit" =&gt; "m" ,
+    "weight_measuring_unit" =&gt; "kg" ,
+  ];
+</code></pre>
+
+<h2 id="config">بازخوانی به کمک تابع config</h2>
+
+<p>بازخوانی پیکربندی‌ها در لاراول، با استفاده از تابع config انجام می‌شود. به تابع config، بگویید که دنبال چه گزینه‌ای می‌گردید و آن را بگیرید.</p>
+
+<p>در حال حاضر، چون هنوز مسیری برای پروژه‌ی خود تعریف نکرده‌ایم، امکان آزمایش در مرورگر را نداریم، اما مشکلات لاراولی راه‌حل‌هایی لاراولی دارند. 
+چرا از کنسول آرتیزان و ابزار tinker موجود در آن کمک نگیریم؟</p>
+
+<p>ابتدا تینکر را فرا بخوانید.</p>
+
+<pre><code>php artisan tinker
+</code></pre>
+
+<p>و بعد در کنسول تینکر، یکی از گزینه‌هایی که ساخته‌اید را فرابخوانید.</p>
+
+<pre><code>config("apollo.book_name")
+</code></pre>
+
+<p>رشته‌ای که به تابع config دادیم، ترکیبی از نام فایل پیکربندی و گزینه‌ی مورد نظر ماست که با یک نقطه از هم جدا شده‌اند.</p>
+
+<p>انتظار دارید چه پاسخی بگیرید؟</p>
+
+<p><img src="_images/03-01-01.png" alt="" /></p>
+
+<p>اگر تابع config آنچه خواسته‌اید را نیابد، مقدار null را بازمی‌گرداند. البته این تابع، آرگومان دومی را نیز برای این جور وقت‌ها در نظر گرفته تا اگر آنچه خواسته‌اید را نیابد، همان مقدار پیش‌فرضی که تعیین کرده‌اید را به شما بازگرداند. </p>
+
+<p><img src="_images/03-01-02.png" alt="" /></p>
+
+<p>در مثال بالا، سه اجرا از تابع config را می‌بینید. در اولی به دنبال چیزی بودیم که وجود داشت، و پاسخش را هم گرفتیم. در دومی به دنبال چیزی بودیم که وجود نداشت و null را دریافت کردیم، و در سومی دنبال چیزی بودیم که وجود نداشت، اما مقدار پیش‌فرضی را برای بازگشت انتخاب کرده بودیم و لاراول همان مقدار پیش‌فرض را به ما بازگرداند.</p>
+
+<h2>کمی مرتب‌تر</h2>
+
+<p>فایل‌های پیکربندی از تودرتوییِ آرایه‌ها پشتیبانی می‌کنند. به این ترتیب، می‌توانید پیکربندی خود را کمی مرتب‌تر نمایید و نظم و ترتیبی منطقی به گزینه‌هایتان بدهید.</p>
+
+<pre><code class="language-php">&lt;?php  // config/apollo.php
+  return [
+    'book' =&gt; [
+       'name' =&gt; "Laravel, Zero to Sixty",
+       'author' =&gt; "Taha Kamkar",
+    ],
+    'measuring_unit' =&gt; [
+     'length' =&gt; "m",
+     'weight' =&gt; "kg",
+    ]
+  ];
+</code></pre>
+
+<p>خوشبختانه تابع config این ساختار تودرتو را تشخیص می‌دهد و با هر نقطه‌ای که می‌گذارید، یک لایه به درون می‌رود.</p>
+
+<pre><code>config('apollo.book.name');
+</code></pre>
+
+<h2>تغییر در محل</h2>
+
+<p>اگر می‌خواهید در هنگام اجرای برنامه مقدار یک پیکربندی را تغییر دهید، آرایه‌ی تغییرات را به تابع config ارسال کنید.</p>
+
+<pre><code>config(['apollo.measuring_unit.weight' =&gt; 'g']);
+</code></pre>
+
+<h2>پیکربندی‌هایی وابسته به محیط</h2>
+
+<p>فایل‌های پیکربندی لاراول، چنانچه مرسوم است، تحت نظارت سیستم کنترل نسخه‌ی شما قرار می‌گیرند و در میان تیم برنامه‌نویسی یکسان ظاهر می‌شوند و طبیعتاً به همان نحو که در فاز توسعه ایجاد می‌شوند، در فاز عملیاتی، روی سرور هم مورد استفاده قرار می‌گیرند.</p>
+
+<p>اگر مایلید که هر کدام از اعضای تیم شما تنظیمات مخصوص به خود را در پاره‌ای از موارد داشته باشند، اگر آنچه در فاز اجرا نیاز دارید با فاز توسعه متفاوت است، و اگر به هر دلیل دیگری می‌خواهید تنظیمات خاصی را از دسترس سیستم کنترل نسخه خارج کنید، می‌توانید از قابلیت git ignore یا معادل‌های آن استفاده کنید، اما راهش این نیست!
+پیش از این، هنگام نصب لاراول، از فایلی مخصوص به نام .env سخن گفتیم. لاراول این فایل ویژه را برای همین کارها در نظر گرفته تا از دسترس سیستم کنترل نسخه مصون بدارد. پیکربندی‌هایی که اینجا تعریف می‌کنید، فقط برای شماست.</p>
+
+<p>اگر می‌خواهید کنترل گزینه‌ای را به فایل .env بسپارید، تعریف آن را در فایل پیکربندی این‌گونه تغییر دهید:</p>
+
+<pre><code class="language-php">&lt;?php  // config/apollo.php
+  return [
+    'book' =&gt; [
+      'name' =&gt; "Laravel, Zero to Sixty",
+      'author' =&gt; "Taha Kamkar",
+    ],
+    'measuring_unit' =&gt; [
+      'length' =&gt; env("MEASURING_UNIT_LENGTH" , "m"),
+      'weight' =&gt; env("MEASURING_UNIT_WEIGHT" , "kg"),
+    ]
+  ];
+</code></pre>
+
+<p>در مثال بالا، کنترل دو گزینه‌ی مربوط به واحدهای اندازه‌گیری را به فایل محیطی .env سپردیم و جهت اطمینان، برای هر کدام مقداری پیش‌فرض تعیین کردیم.</p>
+
+<p>حالا تنها کاری که باقی مانده، این است که نشانی‌هایی که داده‌ایم را به فایل .env خود نیز بیافزاییم.</p>
+
+<pre><code>MEASURING_UNIT_LENGTH=cm
+MEASURING_UNIT_WEIGHT=g
+</code></pre>
+
+<p>با انجام همین دو کار ساده، لاراول برای این دو گزینه، ابتدا سراغ فایل .env می‌رود و اگر آنچه را خواسته‌اید پیدا نکرد، از مقدار پیش‌فرضی که در فایل پیکربندی تعیین کرده‌اید استفاده می‌کند.</p>
+
+<h2>نکته‌هایی در باب پیکربندی‌های محیطی</h2>
+
+<h4>نکته نخست</h4>
+
+<p>فایل .env، یک فایل پی‌اچ‌پی نیست و الگوی دستوری فایل‌های پی‌اچ‌پی در آن رعایت نمی‌شود. اگر مطمئن نیستید که چطور متغیر جدیدی تعریف کنید، از بخش‌های دیگر این فایل الگو بگیرید.</p>
+
+<h4>نکته بعدی</h4>
+
+<p>خالقان سیستم عامل ویندوز فکر نمی‌کردند روزی فرا برسد که کسی بخواهد فایل بدون نامی ایجاد کند و از آن استفاده نماید و برای همین هم هست که ایجاد فایل .env در ویندوز به این راحتی‌ها نیست. لاراول فایل .env.example را به همین منظور در بسته‌ی خود گذاشته تا علاوه بر آن که به عنوان الگو و مثال مورد استفاده قرار می‌گیرد، با تغییر پسوند آن بتوانید در محیط ویندوز هم یک فایل .env تر و تمیز بسازید.</p>
+
+<h4>نکته بعدی</h4>
+
+<p>آنچه در فایل پیکربندی محیطی .env تعریف کرده‌اید، ممکن است با سایر متغیرهای محیطی، مثل متغیرهای سطح سرور (server-level) یا سطح سیستم (system-level) بازنویسی شوند. مراقب این موضوع باشید.</p>
+
+<h4>نکته بعدی</h4>
+
+<p>فایل .env.example را فقط برای الگوبرداری و مثال آنجا نگذاشته‌اند. اگر بخشی از یک تیم توسعه هستید، می‌توانید نمونه‌هایی از آنچه در .env لازم دارید را در این فایل قرار دهید تا سایر اعضای تیم بدانند که چه چیزهایی را باید در فایل .env خودشان تعریف کنند. (این دقیقاً همان کاری است که لاراول کرده، وگرنه به ذکر چند مثال در آن فایل اکتفا می‌کرد.)</p>
+
+<h4>نکته بعدی</h4>
+
+<p>یکی از گزینه‌هایی که در فایل .env تعیین می‌شود، گزینه‌ای است با عنوان APP_ENV. این گزینه، در لاراولی که با هم نصب کرده‌ایم، قاعدتاً روی local تنظیم شده است. از روی این گزینه می‌توانید بفهمید که محیط اجرایی برنامه‌ی شما کجاست. </p>
+
+<h4>نکته یکی مانده به آخر</h4>
+
+<p>در کنار فایل .env، می‌توانید فایل دیگری با عنوان .env.testing داشته باشید که مقدم بر .env قرار بگیرد و بدون دست زدن به .env اصلی، پیکربندی دیگری را برای حالت تست برنامه‌ی خود فعال کنید.</p>
+
+<h4 id="c030102">نکته آخر <a href="#fn:c030102" id="fnref:c030102" class="footnote">2</a></h4>
+
+<p>سعی کنید در متن برنامه‌های خود از تابع env استفاده نکنید و هر گزینه‌ای که می‌خواهید را از طریق همان تابع config بخوانید. از تابع env فقط در هنگام تعریف تنظیمات در فایل‌های پیکربندی استفاده کنید و بس.</p>
+
+<h2>کش کردن پیکربندی‌ها</h2>
+
+<p>با هر فراخوانی تنظیمات پیکربندی، لاراول مسیر نسبتاً بلندی را برای یافتن و برگرداندن آن طی می‌کند که ممکن است نگرانی‌هایی در بازدهی برنامه ایجاد کند.
+به یاد دارید که مشکلات لاراولی، راه‌حل‌هایی لاراولی نیز دارند.</p>
+
+<p>لاراول می‌تواند به صورت خودکار پیکربندی‌های مورد استفاده در سیستم شما را کَش کند. طبیعتاً در فاز توسعه نیازی به این کار نیست و کافی است پس از آپلود فایل‌ها در سرور، با استفاده از کنسول آرتیزان، یک بار این کار را انجام دهید.</p>
+
+<pre><code>php artisan config:cache
+</code></pre>
+
+<p>نکته‌ی آخری که در بخش پیش گفتم، را به خاطر دارید؟</p>
+
+<p>سعی کنید در متن برنامه‌های خود از تابع env استفاده نکنید و هر گزینه‌ای که می‌خواهید را از طریق همان تابع config فراخوانی کنید. از تابع env فقط در هنگام تعریف تنظیمات در فایل‌های پیکربندی استفاده کنید و بس.
+داستان از این قرار است که پس از کَش شدن پیکربندی‌ها، لاراول دیگر به سراغ فایل .env نمی‌رود و از آن پس، تابع env، همیشه مقدار null را بازمی‌گرداند.</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+
+<li id="fn:c030101"><p>امیدوارم این توجیه شما را قانع کرده باشد، اما اگر این طور نیست، این یکی را امتحان کنید: هنگام طراحی نقشه‌ی روند آموزشی کتاب، لازم دیدم که پیکربندی را پیش از دیتابیس بشکافم و جای این موضوع در فصل قبل که به مبانی سیستمی لاراول می‌پرداخت نبود و در عین حال نمی‌توانستم یک فصل مستقل برای پیکربندی در نظر بگیرم. اگر باز هم قانع نشده‌اید، چاره‌ای نیست. همین طور که هست تحمل کنید و به خواندن ادامه دهید.<a href="#fnref:c030101" class="reversefootnote">&#160;&#8617;</a></p></li>
+
+<li id="fn:c030102"><p>این آخرین نکته‌ای است که می‌نویسم، اما آخرین نکته‌ای نیست که می‌توانید بدانید. نگاه دیگری به عنوان کتاب بیاندازید و برای اطلاعات بیشتر در مورد هر موضوعی که در این کتاب مطرح شده، به مستندات دست اول لاراول مراجعه نمایید.<a href="#fnref:c030102" class="reversefootnote">&#160;&#8617;</a></p></li>
+
+</ol>
+</div>
+
+    </div>
+  
+
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="/laravel-0-to-60/chapter02/lesson04/inbox/" class="pagination-previous button is-primary is-outlined">
+    →
+    درس ۴: نگاهی به داخل جعبه
+  </a>
+
+
+
+
+  <a href="/laravel-0-to-60/chapter03/lesson02/database/" class="pagination-next button is-primary is-outlined">
+    درس ۲: پیکربندی دیتابیس
+    ←
+  </a>
+    </nav>
+</div>
+    </div>
+
+  </section>
+
+  <footer class="columns hero section is-dark has-text-centered">
+        <div class="container ">
+            <div class="columns">
+
+                <div class="column">
+                    <div class="footer-header">
+                       به این جاها سر بزنید
+                    </div>
+                    <ul class="related-links has-text-centered">
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a>
+                        </li>
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson05/publish/">مجوز انتشار</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dutymess/laravel-0-to-60/issues" target="_blank">گزارش مشکلات</a>
+                        </li>
+                        <li>
+                          <a href="https://virgool.io/@taha" target="_blank">وبلاگ من در ویرگول</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.dutymess.ir" target="_blank">آن یکی وبلاگ من</a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/dutymessIr" target="_blank">و سرانجام، در توییتر</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="footer-header">
+                    لاراول از صفر تا شصت
+                    </div>
+                    <div class="socials">
+                      <a href="/laravel-0-to-60">
+                        <img class="cover" src="/laravel-0-to-60/images/cover.png">
+                      </a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="footer-header">
+                      از درس‌های جدید آگاه شوید
+                    </div>
+
+                    <form action="https://github.us17.list-manage.com/subscribe/post?u=8118b4a1f2130d821eb534012&amp;id=a8b16a6c37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate is-inline-block" target="_blank" novalidate>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input name="EMAIL" class="input" type="email" placeholder="عضویت در خبرنامه">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    عضویت
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    </form>
+
+                    <div class="text">
+                      برای ارسال خبرنامه از سرویس
+                      mailChimp
+                      بهره می‌برم و فقط خبرهای مرتبط با همین کتاب را اطلاع‌رسانی می‌کنم.
+                      از نشانی‌ها حتی برای پروژه‌های بعدی و مشب خودم هم استفاده نمی‌کنم
+                      چه برسد به آن که تبلیغ و هرزنامه بفرستم یا
+                      خدای ناکرده در اختیار کس دیگری قرار دهم.
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="has-text-centered credit">
+              <div>
+              کتاب
+              <a href="https://github.com/dutymess/laravel-0-to-60" target="_blank">
+              «لاراول، از صفر تا شصت»
+              </a>
+              با مجوز
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/" >
+                کرییتیو کامنز
+              </a>
+              به صورت رایگان و آزاد منتشر می‌شود و حقوق آن، در چارچوب مجوز یادشده، متعلق به نویسنده
+              <a href="https://virgool.io/@taha" target="_blank">
+                (طه کامکار)
+              </a>
+              است.
+
+              </div>
+              <div>
+                ارائه شده بر بستر
+                <a href="https://miraxy.github.io/doc-fa/" target="_blank">میرا</a>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="/laravel-0-to-60/static/js/jquery.min.js"></script>
+<script src="/laravel-0-to-60/static/js/highlight.pack.js"></script>
+<script src="/laravel-0-to-60/static/js/highlightjs-line-numbers.min.js"></script>
+<script src="/laravel-0-to-60/static/js/app.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+<title>لاراول، از صفر تا شصت | درس ۳: کنسول آرتیزان</title>
+
+<meta charset="utf-8">
+<meta name="description" content="راهنمایی گام به گام برای ورود به دنیای لاراول">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://dutymess.github.io/laravel-0-to-60">
+<meta property="og:site_name" content="لاراول، از صفر تا شصت">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+
+  <link rel="short icon" href="/static/img/mira.png">
+  <link href="/laravel-0-to-60/static/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/style.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <header class="hero is-info columns">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+              <a href="/laravel-0-to-60">
+                لاراول، از صفر تا شصت
+              </a>
+            </h1>
+            <h2 class="subtitle">راهنمایی گام به گام برای ورود به دنیای لاراول</h2>
+        </div>
+    </div>
+    <span class="sidebar_toggle">
+        <em class="open-icon"></em>
+    </span>
+</header>
+
+  <section class="main-content columns is-fullheight">
+    <aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        
+        <li>
+        
+        
+          <span class="season">پیشگفتار</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson01/preface/">- ماجرای این کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson02/thanks/">- تشکر می‌کنم</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson03/support/">- حمایت از کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">- بازخورد</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/">- انتشار کتاب</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل اول: پیش به سوی صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson01/install/">- درس ۱:‌ معماری MVC</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل دوم: لاراول، در حد صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson01/install/">- درس ۱:‌ نصب و راه اندازی لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson02/folders/">- درس ۲: ساختار پوشه‌ها</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson03/artisan/">- درس ۳: کنسول آرتیزان</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson04/inbox/">- درس ۴: نگاهی به داخل جعبه</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل سوم: شروع واقعی با دیتابیس</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson01/config/">- درس ۱: پیکربندی‌ها در لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson02/database/">- درس ۲: پیکربندی دیتابیس</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson03/migrations/">- درس ۳: مایگریشن</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+    </ul>
+  </div>
+</aside>
+
+    <div class="container column">
+        <div class="section" id="content">
+
+  
+      
+          <h1 class="list">فصل دوم: لاراول، در حد صفر</h1>
+      
+
+    <h3 class="list">درس ۳: کنسول آرتیزان</h3>
+
+    <div class="content-body content">
+    <a name="more"></a>
+<p>جمله‌ی مرا به خاطر دارید که گفتم «همه‌ی آنچه که مشکلات لاراولی خوانده می‌شوند، راه‌حل‌هایی لاراولی نیز دارند»؟</p>
+
+<p>آرتیزان، راه حلی لاراولی برای طیف وسیعی از مشکلاتی که ممکن است در لاراول با آن‌ها روبه‌رو باشید.</p>
+
+<p>آرتیزان، در یک کلام، دستیار خط فرمان<a href="#fn:c020301" id="fnref:c020301" class="footnote">1</a> لاراول است. برنامه‌ایست که در دل فریمورک گنجانده شده تا برنامه‌نویسان را در فرآیند توسعه‌ی نرم‌افزارهایشان همراهی کند.</p>
+
+<h2>نصب آرتیزان</h2>
+
+<p>پیش از هر چیز باید آرتیزان را در پروژه‌ی خود نصب کنید و برای این کار، به هیچ کاری نیاز ندارید! حتی به نصب آرتیزان!</p>
+
+<p>آرتیزان نیازی به نصب ندارد. در لاراول، همه چیز خیلی ساده‌تر از این حرف‌هاست. پروژه‌ی لاراولی جدیدی را مطابق آنچه در درس اول این فصل گفتیم ایجاد کنید، یا فایل‌های یک پروژه‌ی لاراولی را از یک جایی (گیت هاب، یا کامپیوتر دوستتان) کپی کنید و در لوکال هاست خودتان بریزید و ملاحظه بفرمایید که آرتیزان هم همان جاست.</p>
+
+<p>کافی است با کنسول خط فرمان خود (ترمینال، کامندلاین، یا هرچه که اسمش هست)، به پوشه‌ای که فایل‌ها در آنجاست بروید و آرتیزان را فرا بخوانید.</p>
+
+<pre><code>php artisan
+</code></pre>
+
+<p>با یکی از این دستورات قبلاً هم آشنا شده‌ایم و اگر همگام با من جلو آمده باشید، عملاً آن را آزموده‌اید. این دستور:</p>
+
+<pre><code>php artian key:generate
+</code></pre>
+
+<p>این همان دستوری است که یک کلید رمزنگاری مناسب برای ما تولید کرده و در جای مناسب قرار می‌دهد و ما را از باز کردن فایل config و تایپ یک کد مناسب و غیرتکراری با تعداد درست کاراکتر بی‌نیاز می‌سازد.</p>
+
+<h2>مثالی از آرتیزان</h2>
+
+<p>تنبلی نکنید و کامپیوتر خود را باز کرده و این دستور را اجرا کنید و نتیجه را ببینید. پاسخ، فهرست بلندبالایی است از دستوراتی که آرتیزان به صورت پیش‌فرض ارائه می‌کند.</p>
+
+<pre><code>php artisan list
+</code></pre>
+
+<p><img src="images/02-03-01.png" alt="" /></p>
+
+<p>به دستورهایی که تحت عنوان make طبقه‌بندی شده‌اند نگاه کنید تا بدانید که چرا در انتهای درس پیش، می‌گفتم نگران قرار گرفتن فایل‌ها در مسیر درستشان نباشید.
+به عنوان مثال، این دستور را در نظر بگیرید:</p>
+
+<pre><code>php artisan make:event Folan
+</code></pre>
+
+<p>اگر پروژه‌ی آپولو هوا کردن را همگام با من ایجاد کرده‌اید، نگاهی به ساختار پوشه‌های داخل پوشه‌ی app بیاندازید و بعد دستور بالا را اجرا نمایید.</p>
+
+<p>ملاحظه می‌کنید که آرتیزان، در ابتدا پوشه‌ای به نام Events می‌سازد و در پوشه‌ی apps قرار می‌دهد (به بزرگی و کوچکی حروف دقت کنید)، بعد فایلی به نام Folan.php را در آن می‌سازد و چارچوب یک کلاس با عنوان Folan را در آن قرار می‌دهد و ضمن اضافه کردن نیم‌اسپیس به ابتدای آن، dependencyهای لازم را نیز فهرست می‌کند و تنها کاری که بر عهده‌ی شما باقی می‌ماند آن است که کد مربوط به ایجاد رویداد خود را بنویسید.</p>
+
+<p>ملاحظه می‌فرمایید که نگرانی در مورد به خاطر سپردن محل قرارگیری فایل‌ها و رعایت نیم‌اسپیس‌ها به‌کلی غیرضروری است. آرتیزان مراقب این چیزها (و بیش از این چیزها) هست تا تمرکز و نیروی فکری شما برای نوشتن کد یک برنامه‌ی معرکه آزاد باشد.</p>
+
+<p>اگر واقعاً تنبلی نکردید و فرآیند را با من انجام دادید، بعد از لذت بردن از نتیجه‌ی این آزمایش ساده، پوشه‌ی Events را پاک کنید تا همه چیز به حالت پیش از اجرای آزمایش بازگردد. </p>
+
+<h2>و مثال‌هایی دیگر</h2>
+
+<p>اگرچه دستورهای خانواده‌ی make، پرکاربردترین دستورهای آرتیزان هنگام نوشتن پروژه هستند، اما این تمام ماجرا نیست.</p>
+
+<p>فرض کنید می‌خواهیم فایل‌هایی را در یک پروژه‌ی آنلاین جابجا کنیم و لازم است سایت را موقتاً از دسترس خارج نماییم. اگر میزبان سایت از پروتکل SSH پشتیبانی کند، می‌توانیم این دستور را اجرا کنیم:</p>
+
+<pre><code>php artisan down
+</code></pre>
+
+<p>و با این کار، سایت را موقتاً به حالت تعمیرات ببریم و هر گاه کارمان تمام شد،‌ با یک دستور برعکس، دوباره به زندگی بازگردانیم.</p>
+
+<pre><code>php artisan up
+</code></pre>
+
+<p>دستورات آرتیزان، راهنما هم دارند که هر الگوی دستور یادمان رفت، به داد ما برسند.</p>
+
+<pre><code>php artisan up --help
+</code></pre>
+
+<p>اگر دستوری را با اشتباه املایی تایپ کنیم، خط فرمان آرتیزان با یک پیام خطا خیال خودش را راحت نمی‌کند و در عوض، سعی می‌کند حدس بزند که منظورمان چه بوده است.</p>
+
+<p><img src="images/02-03-02.png" alt="" /></p>
+
+<h2>یک پینه‌دوز معرکه، در قلب آرتیزان!</h2>
+
+<p>دستورهای خاندان make را به عنوان پرکاربردترین دستورهای آرتیزان معرفی کردم، اما اگر لازم باشد حرفم را پس می‌گیرم.
+وقتی پای تینکر به میان بیاید، لازم هم هست.</p>
+
+<p>تینکر (Tinker) در لغت، به معنی وصله‌بند است و از پینه‌دوز استفاده کردم، چون بامزه‌تر بود.</p>
+
+<p>تینکر، ابزاری بسیار کارآمد است که همراه با آرتیزان می‌آید و می‌تواند دستورهای پی‌اچ‌پی را در محیط برنامه‌ی ما اجرا کند.</p>
+
+<pre><code>php artisan tinker
+</code></pre>
+
+<p><img src="images/02-03-03.png" alt="" /></p>
+
+<p>ملاحظه می‌فرمایید که در کنسول تینکر، می‌توانیم دستورهایی را اجرا کنیم و نتیجه‌اش را فوراً ببینیم، بدون این که نیاز باشد بخشی از خط‌های برنامه را خراب کنیم.</p>
+
+<p>در تینکر، می‌توانیم هلپرهای خودمان را اجرا کنیم، می‌توانیم از توابع بومی php استفاده کنیم، متغیری را مقداردهی کنیم و آزمایشی را روی آن انجام دهیم، یا حتی چیزی را وارد سشن کنیم و دوباره آن را بخوانیم تا خیلی زیرپوستی به خواننده‌ی خود نشان دهیم که سشن‌ها در لاراول چقدر راحت کار می‌کنند.</p>
+
+<h2>تلفظ آرتیزان</h2>
+
+<p>میان صاحب‌نظران فارسی‌زبان، اختلاف نظر بسیاری در مورد تلفظ درست آرتیزان وجود دارد.</p>
+
+<p>حرف S در زبان انگلیسی، اغلب با صدای «س» و گاهی هم با صدای «ز» خوانده می‌شود، هرچند «ش» و «ژ» و چیزهای دیگری هم از آن شنیده شده است. حرف A را هم که به هزار و یک جور شناخته و ناشناخته می‌خوانند.</p>
+
+<p>اصولاً در زبان انگلیسی از روی املای کلمات نمی‌توانیم حدس درستی درباره‌ی قرائتشان بزنیم.</p>
+
+<p>با گوش دادن به فیلم‌های آموزشی نظیر مجموعه‌ی ارزشمندی که جفری وی در سایت خود با عنوان Laracasts عرضه می‌کند، چیزی شبیه «آرتیسِن» یا «آرتیزِن» (با یک کسره‌ی خیلی ریز و زیرپوستی) می‌شنویم. اما من ترجیح می‌دهم به جای اعتماد به گوش‌هایم، تلفظ درست را از دیکشنری ببینم و کجا بهتر از لانگمن.</p>
+
+<p>دیکشنری لانگمن، دو تلفظ ˌɑːtɪˈzæn و ˈɑːrtɪzən را به ترتیب برای گویش‌های انگلیسی و آمریکایی این کلمه معرفی کرده که به فارسی می‌توانیم «آتیزَن» و «آرتیزِن» بنویسیم و به این ترتیب، شکی در «ز» خواندن این کلمه باقی نمی‌ماند.</p>
+
+<p>القصه، من «آرتیزان» می‌نویسم، چون هم برای مخاطب فارسی‌زبان آشناتر است و هم از تلفظ‌های درست آن دور نیست.</p>
+
+<h2>معنای آرتیزان</h2>
+
+<p>آرتیزان، به روایت همان دیکشنری که عرض کردم، به کسی می‌گویند که محصولی را ماهرانه، با دست‌های خویش خلق می‌کند. صنعتگری و هنر،‌ دو مفهومی است که در این کلمه در هم آمیخته‌اند. هیچ واژه‌ی فارسی‌ای نمی‌شناسم که حق مطلب را در مورد این کلمه ادا کرده باشد و برای همین، از ترجمه‌ی شعاری که خالق لاراول برای مخلوقش انتخاب کرده، درمی‌مانم:</p>
+
+<p>Laravel: PHP Framework for Web Artisans</p>
+
+<p>لاراول، بستری برای «آرتیزان»هاست و نام دستیارش را هم که در واقع یک کنسول خط فرمان (CLI) است، «کنسول آرتیزان»‌ گذاشته.</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+
+<li id="fn:c020301"><p>CLI: Command-Line Interface<a href="#fnref:c020301" class="reversefootnote">&#160;&#8617;</a></p></li>
+
+</ol>
+</div>
+
+    </div>
+  
+
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="/laravel-0-to-60/chapter02/lesson02/folders/" class="pagination-previous button is-primary is-outlined">
+    →
+    درس ۲: ساختار پوشه‌ها
+  </a>
+
+
+
+
+  <a href="/laravel-0-to-60/chapter02/lesson04/inbox/" class="pagination-next button is-primary is-outlined">
+    درس ۴: نگاهی به داخل جعبه
+    ←
+  </a>
+    </nav>
+</div>
+    </div>
+
+  </section>
+
+  <footer class="columns hero section is-dark has-text-centered">
+        <div class="container ">
+            <div class="columns">
+
+                <div class="column">
+                    <div class="footer-header">
+                       به این جاها سر بزنید
+                    </div>
+                    <ul class="related-links has-text-centered">
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a>
+                        </li>
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson05/publish/">مجوز انتشار</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dutymess/laravel-0-to-60/issues" target="_blank">گزارش مشکلات</a>
+                        </li>
+                        <li>
+                          <a href="https://virgool.io/@taha" target="_blank">وبلاگ من در ویرگول</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.dutymess.ir" target="_blank">آن یکی وبلاگ من</a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/dutymessIr" target="_blank">و سرانجام، در توییتر</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="footer-header">
+                    لاراول از صفر تا شصت
+                    </div>
+                    <div class="socials">
+                      <a href="/laravel-0-to-60">
+                        <img class="cover" src="/laravel-0-to-60/images/cover.png">
+                      </a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="footer-header">
+                      از درس‌های جدید آگاه شوید
+                    </div>
+
+                    <form action="https://github.us17.list-manage.com/subscribe/post?u=8118b4a1f2130d821eb534012&amp;id=a8b16a6c37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate is-inline-block" target="_blank" novalidate>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input name="EMAIL" class="input" type="email" placeholder="عضویت در خبرنامه">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    عضویت
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    </form>
+
+                    <div class="text">
+                      برای ارسال خبرنامه از سرویس
+                      mailChimp
+                      بهره می‌برم و فقط خبرهای مرتبط با همین کتاب را اطلاع‌رسانی می‌کنم.
+                      از نشانی‌ها حتی برای پروژه‌های بعدی و مشب خودم هم استفاده نمی‌کنم
+                      چه برسد به آن که تبلیغ و هرزنامه بفرستم یا
+                      خدای ناکرده در اختیار کس دیگری قرار دهم.
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="has-text-centered credit">
+              <div>
+              کتاب
+              <a href="https://github.com/dutymess/laravel-0-to-60" target="_blank">
+              «لاراول، از صفر تا شصت»
+              </a>
+              با مجوز
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/" >
+                کرییتیو کامنز
+              </a>
+              به صورت رایگان و آزاد منتشر می‌شود و حقوق آن، در چارچوب مجوز یادشده، متعلق به نویسنده
+              <a href="https://virgool.io/@taha" target="_blank">
+                (طه کامکار)
+              </a>
+              است.
+
+              </div>
+              <div>
+                ارائه شده بر بستر
+                <a href="https://miraxy.github.io/doc-fa/" target="_blank">میرا</a>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="/laravel-0-to-60/static/js/jquery.min.js"></script>
+<script src="/laravel-0-to-60/static/js/highlight.pack.js"></script>
+<script src="/laravel-0-to-60/static/js/highlightjs-line-numbers.min.js"></script>
+<script src="/laravel-0-to-60/static/js/app.js"></script>
+
+
+</body>
+</html>

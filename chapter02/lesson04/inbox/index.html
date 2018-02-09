@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+<title>لاراول، از صفر تا شصت | درس ۴: نگاهی به داخل جعبه</title>
+
+<meta charset="utf-8">
+<meta name="description" content="راهنمایی گام به گام برای ورود به دنیای لاراول">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://dutymess.github.io/laravel-0-to-60">
+<meta property="og:site_name" content="لاراول، از صفر تا شصت">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+
+  <link rel="short icon" href="/static/img/mira.png">
+  <link href="/laravel-0-to-60/static/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/style.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <header class="hero is-info columns">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+              <a href="/laravel-0-to-60">
+                لاراول، از صفر تا شصت
+              </a>
+            </h1>
+            <h2 class="subtitle">راهنمایی گام به گام برای ورود به دنیای لاراول</h2>
+        </div>
+    </div>
+    <span class="sidebar_toggle">
+        <em class="open-icon"></em>
+    </span>
+</header>
+
+  <section class="main-content columns is-fullheight">
+    <aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        
+        <li>
+        
+        
+          <span class="season">پیشگفتار</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson01/preface/">- ماجرای این کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson02/thanks/">- تشکر می‌کنم</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson03/support/">- حمایت از کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">- بازخورد</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/">- انتشار کتاب</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل اول: پیش به سوی صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson01/install/">- درس ۱:‌ معماری MVC</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل دوم: لاراول، در حد صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson01/install/">- درس ۱:‌ نصب و راه اندازی لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson02/folders/">- درس ۲: ساختار پوشه‌ها</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson03/artisan/">- درس ۳: کنسول آرتیزان</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson04/inbox/">- درس ۴: نگاهی به داخل جعبه</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل سوم: شروع واقعی با دیتابیس</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson01/config/">- درس ۱: پیکربندی‌ها در لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson02/database/">- درس ۲: پیکربندی دیتابیس</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson03/migrations/">- درس ۳: مایگریشن</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+    </ul>
+  </div>
+</aside>
+
+    <div class="container column">
+        <div class="section" id="content">
+
+  
+      
+          <h1 class="list">فصل دوم: لاراول، در حد صفر</h1>
+      
+
+    <h3 class="list">درس ۴: نگاهی به داخل جعبه</h3>
+
+    <div class="content-body content">
+    <a name="more"></a>
+<p>فرض ما در این فصل از کتاب آن بود که هیچ از لاراول نمی‌دانیم؛ صفر مطلق. با این فرض، درس اول این فصل را به نصب لاراول پرداختیم و در فصل دوم، نگاهی به ساختار پوشه‌های آن انداختیم.</p>
+
+<p>اکنون در این فصل قدری در مکاشفه‌ی خود جلوتر می‌رویم تا ببینیم لاراول، در بدو نصب، چه امکاناتی با خود دارد و در اختیار ما می‌گذارد، بدون آن که حتی زحمت نصب یک افزونه را بکشیم.</p>
+
+<p>مایگریشن‌های اعضای سایت</p>
+
+<p>سرویس لاگین و لاگاوت و فراموشی رمز عبور</p>
+
+<p>ارسال ایمیل</p>
+
+    </div>
+  
+
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="/laravel-0-to-60/chapter02/lesson03/artisan/" class="pagination-previous button is-primary is-outlined">
+    →
+    درس ۳: کنسول آرتیزان
+  </a>
+
+
+
+
+  <a href="/laravel-0-to-60/chapter03/lesson01/config/" class="pagination-next button is-primary is-outlined">
+    درس ۱: پیکربندی‌ها در لاراول
+    ←
+  </a>
+    </nav>
+</div>
+    </div>
+
+  </section>
+
+  <footer class="columns hero section is-dark has-text-centered">
+        <div class="container ">
+            <div class="columns">
+
+                <div class="column">
+                    <div class="footer-header">
+                       به این جاها سر بزنید
+                    </div>
+                    <ul class="related-links has-text-centered">
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a>
+                        </li>
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson05/publish/">مجوز انتشار</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dutymess/laravel-0-to-60/issues" target="_blank">گزارش مشکلات</a>
+                        </li>
+                        <li>
+                          <a href="https://virgool.io/@taha" target="_blank">وبلاگ من در ویرگول</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.dutymess.ir" target="_blank">آن یکی وبلاگ من</a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/dutymessIr" target="_blank">و سرانجام، در توییتر</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="footer-header">
+                    لاراول از صفر تا شصت
+                    </div>
+                    <div class="socials">
+                      <a href="/laravel-0-to-60">
+                        <img class="cover" src="/laravel-0-to-60/images/cover.png">
+                      </a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="footer-header">
+                      از درس‌های جدید آگاه شوید
+                    </div>
+
+                    <form action="https://github.us17.list-manage.com/subscribe/post?u=8118b4a1f2130d821eb534012&amp;id=a8b16a6c37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate is-inline-block" target="_blank" novalidate>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input name="EMAIL" class="input" type="email" placeholder="عضویت در خبرنامه">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    عضویت
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    </form>
+
+                    <div class="text">
+                      برای ارسال خبرنامه از سرویس
+                      mailChimp
+                      بهره می‌برم و فقط خبرهای مرتبط با همین کتاب را اطلاع‌رسانی می‌کنم.
+                      از نشانی‌ها حتی برای پروژه‌های بعدی و مشب خودم هم استفاده نمی‌کنم
+                      چه برسد به آن که تبلیغ و هرزنامه بفرستم یا
+                      خدای ناکرده در اختیار کس دیگری قرار دهم.
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="has-text-centered credit">
+              <div>
+              کتاب
+              <a href="https://github.com/dutymess/laravel-0-to-60" target="_blank">
+              «لاراول، از صفر تا شصت»
+              </a>
+              با مجوز
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/" >
+                کرییتیو کامنز
+              </a>
+              به صورت رایگان و آزاد منتشر می‌شود و حقوق آن، در چارچوب مجوز یادشده، متعلق به نویسنده
+              <a href="https://virgool.io/@taha" target="_blank">
+                (طه کامکار)
+              </a>
+              است.
+
+              </div>
+              <div>
+                ارائه شده بر بستر
+                <a href="https://miraxy.github.io/doc-fa/" target="_blank">میرا</a>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="/laravel-0-to-60/static/js/jquery.min.js"></script>
+<script src="/laravel-0-to-60/static/js/highlight.pack.js"></script>
+<script src="/laravel-0-to-60/static/js/highlightjs-line-numbers.min.js"></script>
+<script src="/laravel-0-to-60/static/js/app.js"></script>
+
+
+</body>
+</html>
