@@ -23,7 +23,7 @@ _index: support
 
 ```
 Bitcoin: 1J3cu266TLvc5kX66jQxndErknh5ciugSZ
-Bitcoin Cash: qr99v230zvyc9eddgjj9l5m4fdl5t4ymmcqwx60wr2
+Bitcoin-Cash: qr99v230zvyc9eddgjj9l5m4fdl5t4ymmcqwx60wr2
 Ether: 0x9B0FF0B2E804122BCDcB67F5e4e96C4049D1C2bf
 ```
 
