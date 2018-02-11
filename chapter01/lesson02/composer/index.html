@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+<title>لاراول، از صفر تا شصت | کامپوزر و مدیریت بسته‌ها</title>
+
+<meta charset="utf-8">
+<meta name="description" content="راهنمایی گام به گام برای ورود به دنیای لاراول">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://dutymess.github.io/laravel-0-to-60">
+<meta property="og:site_name" content="لاراول، از صفر تا شصت">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+
+  <link rel="short icon" href="/static/img/mira.png">
+  <link href="/laravel-0-to-60/static/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/style.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <header class="hero is-info columns">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+              <a href="/laravel-0-to-60">
+                لاراول، از صفر تا شصت
+              </a>
+            </h1>
+            <h2 class="subtitle">راهنمایی گام به گام برای ورود به دنیای لاراول</h2>
+        </div>
+    </div>
+    <span class="sidebar_toggle">
+        <em class="open-icon"></em>
+    </span>
+</header>
+
+  <section class="main-content columns is-fullheight">
+    <aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        
+        <li>
+        
+        
+          <span class="season">پیشگفتار</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson01/preface/">- ماجرای این کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson02/thanks/">- تشکر می‌کنم</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson03/support/">- حمایت از کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">- بازخورد</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/">- انتشار کتاب</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل اول: پیش به سوی صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson01/mvc/">- معماری MVC</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson02/composer/">- کامپوزر و مدیریت بسته‌ها</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson03/dependencies/">- وابستگی‌ها و اتصالات</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل دوم: لاراول، در حد صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson01/install/">- نصب و راه اندازی لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson02/folders/">- ساختار پوشه‌های لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson03/artisan/">- کنسول آرتیزان</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson04/out-of-the-box/">- نگاهی به داخل جعبه</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل سوم: شروع واقعی با دیتابیس</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson01/config/">- پیکربندی‌ها در لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson02/database/">- پیکربندی دیتابیس</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson03/migrations/">- طراحی دیتابیس با مایگرشن</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+    </ul>
+  </div>
+</aside>
+
+    <div class="container column">
+        <div class="section" id="content">
+
+  
+      
+          <h1 class="list">فصل اول: پیش به سوی صفر</h1>
+      
+
+    <h3 class="list">کامپوزر و مدیریت بسته‌ها</h3>
+
+    <div class="content-body content">
+    <a name="more"></a>
+<p>در <a href="/laravel-0-to-60/chapter00/lesson01/preface/">مقدمه</a> گفتیم و از نام کتاب هم پیداست که فرآیند آموزش از نقطه‌ی صفر شروع می‌شود و لازم نیست چیزی درباره‌ی لاراول بدانید.</p>
+
+<p>اما به پیش‌نیازهایی هم اشاره کردیم که قرار شد در هر کدام از درس‌های فصل یک کتاب، یکی از آن‌ها را بشکافیم. </p>
+
+<p>این درس، به معرفی کامپوزر و نقش آن به عنوان سیستم مدیریت بسته‌های پی‌اچ‌پی اختصاص دارد.</p>
+
+<h5>اگر با موضوع این درس، یا هر یک از درس‌های فصل یکم کتاب آشنا هستید، بهتر است وقت خود را تلف نکنید و بدون مطالعه، از آن عبور کنید. فصل‌های بعدی به مطالب این فصل وابسته نیستند.</h5>
+
+<h1>خود را تکرار نکنید</h1>
+
+<p>برنامه‌نویسان پی‌اچ‌پی، در روزگاری نه‌چندان دور، برای هر پروژه‌ای که می‌نوشتند یک بار چرخ را از نو اختراع می‌کردند. آن‌ها آنچه که لازم داشتند را از این سو و آن سو گرد هم می‌آوردند و در پوشه‌ای کپی می‌کردند و بعد بنای خود را بر آن استوار می‌ساختند. </p>
+
+<p>از آنجا که فرآیند آماده‌سازی نقطه‌ی صفر پروژه‌ها کاری بسیار دردناک و وقت‌گیر است، بعضی‌ها پوشه‌هایی از پیش آماده شده به عنوان آغاز پروژه‌های خود می‌ساختند که از آن پس مجبور نباشند ابزارها را جمع‌آوری کنند. </p>
+
+<p>اما به این سادگی‌ها نبوده و نیست.</p>
+
+<p>یکی دو روز وقت می‌گذاریم و ابزارهایی که خودمان ساخته‌ایم و آن‌ها که دیگران ساخته‌اند و دانلود کرده‌ایم را گرد هم می‌آوریم و پوشه‌ای می‌سازیم و بعد، در حالی که با افتخار به کارمان نگاه می‌کنیم و به خود می‌گوییم که برای پروژه‌ی بعدی نیازی به این همه کار نیست، یک کپی دست‌نخورده از پوشه را برای بعدها کنار می‌گذاریم.</p>
+
+<p>دو ماه بعد، هنگامی که پروژه‌ی جدیدی را کلید می‌زنیم، با خوشحالی سراغ پوشه‌ی آماده‌ی خودمان می‌رویم و یک کپی از آن می‌گیریم، اما درست وقتی که می‌خواهیم شروع کنیم می‌بینیم که ای دل غافل:</p>
+
+<ul>
+<li>بعضی از ابزارهایی که خودمان ساخته بودیم، در طول پروژه‌ی قبلی بهتر شده‌اند و ارتقاء یافته‌اند و آنچه که دو ماه پیش در این پوشه گذاشته بودیم، به درد نمی‌خورد و باید نسخه‌ی تازه‌ای از کدهای پروژه‌ی قبلی کپی کنیم.</li>
+<li>در این پروژه قرار نیست چیزی را برای کسی پیامک کنیم و بهتر است ابزارهای مرتبط با آن را از پوشه‌ی جدیدمان حذف کنیم که برنامه سنگین نشود.</li>
+<li>در این پروژه، بر خلاف قبلی به API نیاز داریم و آخرین پروژه‌ای که با API سروکار داشت مال شش ماه پیش بود و باید آخرین کدها را از آن پروژه بیاوریم.</li>
+<li>دیگران هم در این دو ماه بی‌کار نبوده‌اند و ابزارهای عمومی‌شان را به‌روزرسانی کرده‌اند و حالا باید برویم و آن‌ها را هم از نو دانلود کنیم و جایگزین نسخه‌های قبلی کنیم.</li>
+<li>یکی از ابزارهای عمومی که آپدیت شده، با یکی دیگر از ابزارهایی که ما نوشته‌ایم و حوصله نداریم بازسازی کنیم، سازگار نیست و باید یکی از نسخه‌های قبلی آن را که هنوز سازگار است ولی از مرتبه‌ی قبلی جدیدتر باشد بیابیم و در فایل‌هایمان بگذاریم.</li>
+</ul>
+
+<p>بعد از سه روز که این کارها را کردیم، لبخند می‌زنیم و می‌گوییم که در عوض پوشه‌ام بهتر شده و در پروژه‌ی بعدی دیگر دو روز وقت نمی‌گذارم.</p>
+
+<p>دو ماه دیگر این پروژه هم تمام می‌شود و کار بعدی از راه می‌رسد و روز از نو، روزی از نو!</p>
+
+<p>اجازه بدهید خاطر شما را با یادآوری بلاهایی که در حین نوشتن پروژه‌ها، یا بدتر از آن، هنگام توسعه‌ی آن‌ها یک سال پس از نسخه‌ی اولیه رخ می‌داد نیازارم.</p>
+
+<h1>بسته‌های برنامه‌نویسی</h1>
+
+<p>واقعیت آن است برنامه‌نویسان پی‌اچ‌پی موجودات نگون‌بختی بودند که هر بار همه‌ی این کارها را می‌کردند و روزها که به خواب می‌رفتند، دنیایی را تصور می‌کردند که بسته‌های برنامه‌نویسی همه در یک جا باشند و خودبه‌خود آپدیت شوند. این بخت سیاه وقتی کامل می‌شد که طعنه‌ی برنامه‌نویسان زبان‌های دیگر را می‌دیدند و چیزی نمی‌توانستند بگویند. (شاید برای همین بوده که شب‌ها کار می‌کردند و روزها می‌خوابیدند.)</p>
+
+<h2>مدیریت گلابی‌وار بسته‌ها</h2>
+
+<p>کمی پیش از پایان قرن بیستم بود که سر و کله‌ی ابزاری به نام PEAR پیدا شد. این عنوان، که در فارسی به معنای «گلابی» است، سرواژه‌ی عبارتی طولانی است به معنی «مخزن افزونه‌ها و برنامه‌های پی‌اچ‌پی» (PHP Extension and Application Repository).</p>
+
+<p>«گلابی» می‌توانست بسته‌ها را از مخزنی واحد دانلود و نصب کند و همچنین، مراقب وابستگی‌های آن‌ها نیز باشد تا اگر یک بسته به بسته‌ی دیگری نیز دارد، آن را هم دریافت و نصب نماید. </p>
+
+<p>«گلابی»، که نوید روزهای خوبی را به دنیای پی‌اچ‌پی می‌داد، خیلی زود به سرطانی تبدیل شد که هرچه می‌گذشت حال و روز وخیم‌تری به خود می‌گرفت. اول آن که خیلی‌ها رغبت نمی‌کردند برنامه‌های خود را در مخازن PEAR آپدیت کنند و آپدیت نگاه دارند و بدتر از آن، «گلابی» بسته‌ها را در تمام سیستم شما نصب می‌کرد و نمی‌توانست خود را محدود به یک پروژه کند. یعنی اگر روی دو پروژه‌ی هم‌زمان کار می‌کردید و یکی از پروژه‌ها به روایتی قدیمی‌تر از یک بسته نیاز داشت، کارتان ساخته بود!</p>
+
+<p>مشکل است باور کنیم که کسی یا کسانی به کمک این ابزار گرهی از مشکلات خود گشوده باشند. PEAR هنوز وجود دارد و هنوز نفس می‌کشد، اما هیچ کس نمی‌داند چرا.</p>
+
+<h1>کامپوزر وارد می‌شود</h1>
+
+<p>سیزده سال پس از آغاز تجربه‌ی ناموفق PEAR، کامپوزر با الهام از آنچه <code>npm</code> در دنیای <code>node.js</code> و <code>Bundler</code> در دنیای <code>Ruby</code> انجام داده بود، پا به عرصه‌ی وجود گذاشت و به‌سرعت مشهور شد و مورد قبول بخش بزرگی از جامعه‌ی برنامه‌نویسان پی‌اچ‌پی قرار گرفت و با حمایت بیش از ده فریمورک معتبر و زنده‌ی این زبان، عملاً به یک استاندارد تبدیل شد. </p>
+
+<p>کامپوزر در تمام سیستم نصب می‌شود، اما پکیج‌ها را هم به صورت پروژه‌ای و هم به صورت سراسری مدیریت می‌کند. کامپوزر می‌تواند بسته‌ها را کش کرده و از دانلود مکرر آن جلوگیری نماید و از همه مهم‌تر آن که پایانی بر کابوس روزانه‌ی توسعه‌دهندگان پی‌اچ‌پی باشد.</p>
+
+<p>واقعیت آن است که اغلب آنچه از شلختگی و ناکارآمدی پی‌اچ‌پی می‌شنوید، به نسخه‌های پیش از ۵/۵ پی‌اچ‌پی و دنیای وردپرس و جوملا بازمی‌گردد و روزگاری که هنوز کامپوزر و مدیریت کارآمد بسته‌ها در آن جایی نداشت.</p>
+
+<h2>نصب کامپوزر</h2>
+
+<p>کامپوزر، در خط فرمان سیستم‌عامل‌های یونیکس، گنو/لینوکس و مک، به سادگی اجرای دو دستور نصب می‌شود.</p>
+
+<pre><code class="language-bash">$ curl -s https://getcomposer.org/installer | php
+$ sudo mv composer.phar /usr/local/bin/composer
+</code></pre>
+
+<p>نگران سیستم عامل ویندوز نباشید. فایل قابل نصب کامپوزر برای این سیستم عامل نیز مهیا است. (<a href="https://getcomposer.org/doc/00-intro.md">این‌جا</a>)</p>
+
+<h2>فراخوانی کامپوزر</h2>
+
+<p>پس از نصب کامپوزر، از طریق خط فرمان می‌توانید به آن دسترسی داشته باشید و خبر خوب آن است که این دسترسی، در تمام سیستم‌عامل‌های متداول، یکسان است.</p>
+
+<pre><code class="language-bash">$ composer
+</code></pre>
+
+<h1>استفاده از کامپوزر</h1>
+
+<p>مهم‌ترین مزیت کامپوزر آن است که می‌تواند بسته‌ها را در هر پروژه به صورت مستقل مدیریت کند. کامپوزر بسته‌ها را در پوشه‌ای به نام vendor که در ریشه‌ی پروژه‌ی شما جای می‌گیرد قرار می‌دهد و الگوی کار خود را از فایلی به نام <code>composer.json</code> دریافت می‌کند.</p>
+
+<p>برای شروع، کافی‌ست فایلی با نامی که گفته شد، در هر پوشه‌ای که دوست داشتید درست کنید و با استفاده از الگوی <code>json</code>، بسته‌های مورد نیازتان را مشخص کنید.</p>
+
+<pre><code class="language-json">{
+    "require": {
+        "laravel/framework": "5.5.*",
+        "albertcht/invisible-recaptcha": "&gt;=1.8"
+    }
+}
+</code></pre>
+
+<p>با استفاده از شیء <code>require</code> بسته‌هایی که لازم داریم را یکی‌یکی معرفی می‌کنیم. همان طور که می‌بینید، در هر سطر نام بسته‌ی مورد نظر و مختصات نسخه‌ی مورد نیاز را آورده‌ایم.</p>
+
+<h2>نام بسته‌ها</h2>
+
+<p>نام بسته‌ها از دو بخش تشکیل شده است. بخش اول تولیدکننده‌ی بسته است و بخش دوم، نام بسته. فهرست بسته‌های قابل نصب را نیز می‌توانید از <a href="https://packagist.org/">Packagist</a> بیابید.</p>
+
+<h2>کنترل نسخه</h2>
+
+<p>در مثال بالا، لاراول را با نسخه‌های فرعی ۵/۵ خواسته‌ایم. یعنی فریمورک لاراول به طور خودکار از نسخه‌ی ۵/۵/۱ به ۵/۵/۲ .و بعد به ۵/۵/۳ و تا ۵/۵/۹۹ و بلکه بالاتر آپدیت می‌شود، ولی وارد ۵/۶ نمی‌شود.</p>
+
+<p>بعید است با نگاهی به کد مثال، حدس نزنید که بسته‌ی  <code>invisible-recaptcha</code> را با چه نسخه‌ای می‌خواهیم.</p>
+
+<p>الگوی کنترل نسخه‌ها در کامپوزر بسیار متنوع است. فهرست کامل آن را در <a href="https://getcomposer.org/doc/articles/versions.md">مستندات کامپوزر</a> بجویید.</p>
+
+<h2>محیط‌های مختلف</h2>
+
+<p>ممکن است بسته‌هایی داشته باشید که فقط در فاز توسعه و راه‌اندازی به کار بیایند و وقتی سایت روی سرور اصلی قرار دارد، نیازی به آن‌ها نباشد. کافی‌ست این‌گونه بسته‌ها را به جای آن که در شیء <code>require</code> قرار دهید، در <code>require-dev</code> معرفی کنید.</p>
+
+<pre><code class="language-json">{
+    "require": {
+        "laravel/framework": "5.5.*",
+        "albertcht/invisible-recaptcha": "&gt;=1.8"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^2.4"
+    }
+}
+</code></pre>
+
+<h2>نصب بسته‌ها</h2>
+
+<p>حالا دیگر کافی‌ست با استفاده از یک دستور ساده‌ی خط فرمان، از کامپوزر بخواهید فهرست شما را مرور کند و آنچه لازم است را دانلود نماید.</p>
+
+<pre><code class="language-bash">$ composer install
+</code></pre>
+
+<p>کامپوزر، پوشه‌ای به نام <code>vendor</code> می‌سازد و هر آن‌چه خواسته‌اید را به همراه وابستگی‌هایشان در آن می‌ریزد تا در پروژه‌هایتان استفاده کنید.</p>
+
+<p>همه‌ی بسته‌ها، چه آن‌ها که در  <code>require</code> قرار داده شده‌اند و چه آن‌ها که در <code>require-dev</code> هستند، به صورت پیش‌فرض نصب می‌شوند. اما اگر نیازی به آن‌ها که مناسب فاز توسعه هستند ندارید، می‌توانید این موضوع را با یک سوییچ یادآور شوید.</p>
+
+<pre><code class="language-bash">$ composer instal --no-dev
+</code></pre>
+
+<p>واضح است که بسته‌ها را در حین کار روی پروژه‌ نیز می‌توانید آپدیت کنید.</p>
+
+<pre><code class="language-bash">$ composer update
+</code></pre>
+
+<p>و از همه جذاب‌تر آن که اگر پروژه‌ی خود را جایی آپلود کنید که دسترسی <code>ssh</code> به شما می‌دهد، وابستگی‌هایتان را در زمان بهره‌برداری از پروژه نیز می‌توانید همواره به‌روز نگهداری کنید.</p>
+
+<pre><code class="language-bash">$ composer update --no-dev
+</code></pre>
+
+<h5 id="vendor.">رسم است که پوشه‌ی vendor را از دسترس گیت دور نگاه می‌دارند (ایگنور می‌کنند) تا بتوانند میان محیط‌های توسعه و بهره‌برداری را با سهولت هرچه تمام‌تر تفاوت قائل شوند.</h5>
+
+<h2>فراخوانی خودکار فایل‌ها</h2>
+
+<p>یکی از هنرهای کامپوزر آن است که می‌توانید بسته‌ها و کتابخانه‌هایی را جهت استفاده‌ی مداوم، دم دست نگاه دارید. برای این کار، می‌توانید هنگام تعریف فایل <code>composer.json</code>، از شیء ‍‍<code>autoload‍‍</code> استفاده نمایید.</p>
+
+<pre><code class="language-json">{
+  "autoload-dev": {
+    "psr-4": {
+      "Apollo\\": "apollo/"
+    }
+  },
+}
+</code></pre>
+
+<p>این بار نیز می‌توانید به همان شیوه‌ی قبل، میان محیط توسعه و بهره‌برداری خود تفاوت قائل شوید.</p>
+
+<p>کامپوزر هنگام نصب و آپدیت، فایلی به نام <code>autoloads.php</code> می‌سازد و آنچه را سفارش داده‌اید در آن <code>include</code> (در مفهوم پی‌اچ‌پی آن) می‌کند و شما می‌توانید با دخیل کردن آن در پروژه، نیم‌اسپیس‌ها یا کلاس‌های مورد نیاز خود را سریع‌تر فراخوانی کنید.</p>
+
+<p>نگران این چیزها نباشید. لاراول ترتیب کار را می‌دهد. این اندازه بدانید که فایل <code>autoload.php</code> خود را می‌توانید هر زمان که مال بودید، از نو بسازید. </p>
+
+<pre><code class="language-bash">$ composer dump-autoload
+</code></pre>
+
+<h1>نگران نباشید</h1>
+
+<p>مستندات کامپوزر مفصل هستند و در این درس نمی‌گنجند و قرار هم نبود همه‌ی آن‌ها را بازگو کنیم. حتی قرار نبود مهم‌هایش را بگوییم. همین اندازه که با مفهوم بسته‌ها و کامپوزر، به عنوان ابزار مدیریت بسته‌ها در پی‌اچ‌پی آشنا شده باشید، برای این درس کافی است.</p>
+
+<p>زیاد هم نگرانش نباشید. لاراول بیشتر کارها را انجام می‌دهد و حتی اگر ندانید کامپوزر چطور کار می‌کند، می‌توانید پروژه‌های خوبی را با لاراول خلق کنید. </p>
+
+    </div>
+  
+
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="/laravel-0-to-60/chapter01/lesson01/mvc/" class="pagination-previous button is-primary is-outlined">
+    →
+    معماری MVC
+  </a>
+
+
+
+
+  <a href="/laravel-0-to-60/chapter01/lesson03/dependencies/" class="pagination-next button is-primary is-outlined">
+    وابستگی‌ها و اتصالات
+    ←
+  </a>
+    </nav>
+</div>
+    </div>
+
+  </section>
+
+  <footer class="columns hero section is-dark has-text-centered">
+        <div class="container ">
+            <div class="columns">
+
+                <div class="column">
+                    <div class="footer-header">
+                       به این جاها سر بزنید
+                    </div>
+                    <ul class="related-links has-text-centered">
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a>
+                        </li>
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson05/publish/">مجوز انتشار</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dutymess/laravel-0-to-60/issues" target="_blank">گزارش مشکلات</a>
+                        </li>
+                        <li>
+                          <a href="https://virgool.io/@taha" target="_blank">وبلاگ من در ویرگول</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.dutymess.ir" target="_blank">آن یکی وبلاگ من</a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/dutymessIr" target="_blank">و سرانجام، در توییتر</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="footer-header">
+                    لاراول از صفر تا شصت
+                    </div>
+                    <div class="socials">
+                      <a href="/laravel-0-to-60">
+                        <img class="cover" src="/laravel-0-to-60/images/cover.png">
+                      </a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="footer-header">
+                      از درس‌های جدید آگاه شوید
+                    </div>
+
+                    <form action="https://github.us17.list-manage.com/subscribe/post?u=8118b4a1f2130d821eb534012&amp;id=a8b16a6c37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate is-inline-block" target="_blank" novalidate>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input name="EMAIL" class="input" type="email" placeholder="عضویت در خبرنامه">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    عضویت
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    </form>
+
+                    <div class="text">
+                      برای ارسال خبرنامه از سرویس
+                      mailChimp
+                      بهره می‌برم و فقط خبرهای مرتبط با همین کتاب را اطلاع‌رسانی می‌کنم.
+                      از نشانی‌ها حتی برای پروژه‌های بعدی و مشابه خودم هم استفاده نمی‌کنم
+                      چه برسد به آن که تبلیغ و هرزنامه بفرستم یا
+                      خدای ناکرده در اختیار کس دیگری قرار دهم.
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="has-text-centered credit">
+              <div>
+              کتاب
+              <a href="https://github.com/dutymess/laravel-0-to-60" target="_blank">
+              «لاراول، از صفر تا شصت»
+              </a>
+              با مجوز
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/" >
+                کرییتیو کامنز
+              </a>
+              به صورت رایگان و آزاد منتشر می‌شود و حقوق آن، در چارچوب مجوز یادشده، متعلق به نویسنده
+              <a href="https://virgool.io/@taha" target="_blank">
+                (طه کامکار)
+              </a>
+              است.
+
+              </div>
+              <div>
+                ارائه شده بر بستر
+                <a href="https://miraxy.github.io/doc-fa/" target="_blank">میرا</a>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="/laravel-0-to-60/static/js/jquery.min.js"></script>
+<script src="/laravel-0-to-60/static/js/highlight.pack.js"></script>
+<script src="/laravel-0-to-60/static/js/highlightjs-line-numbers.min.js"></script>
+<script src="/laravel-0-to-60/static/js/app.js"></script>
+
+
+</body>
+</html>
