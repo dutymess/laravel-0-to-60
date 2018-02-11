@@ -3,7 +3,7 @@ utid: 1000-02-03
 chapter: 02
 chaptername: فصل دوم: لاراول، در حد صفر
 part: 03
-title: درس ۳: کنسول آرتیزان
+title: کنسول آرتیزان
 _index: artisan
 ---
 

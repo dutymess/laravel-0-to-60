@@ -14,6 +14,10 @@
 {{ ELSE }}
   <h1 class="cover">{{ SITE.title }}</h1>
   <h2 class="cover">{{ SITE.description }}</h2>
+
+  <img class="cover" src="/laravel-0-to-60/images/cover.png">
+
+
 {{ END }}
 
 </div>

@@ -3,7 +3,7 @@ utid: 1000-02-01
 chapter: 02
 chaptername: فصل دوم: لاراول، در حد صفر
 part: 01
-title: درس ۱:‌ نصب و راه اندازی لاراول
+title: نصب و راه اندازی لاراول
 _index: install
 ---
 
