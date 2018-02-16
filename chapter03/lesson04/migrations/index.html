@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+<title>لاراول، از صفر تا شصت | طراحی دیتابیس با مایگرشن</title>
+
+<meta charset="utf-8">
+<meta name="description" content="راهنمایی گام به گام برای ورود به دنیای لاراول">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://dutymess.github.io/laravel-0-to-60">
+<meta property="og:site_name" content="لاراول، از صفر تا شصت">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+
+  <link rel="short icon" href="/static/img/mira.png">
+  <link href="/laravel-0-to-60/static/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/style.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <header class="hero is-info columns">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+              <a href="/laravel-0-to-60">
+                لاراول، از صفر تا شصت
+              </a>
+            </h1>
+            <h2 class="subtitle">راهنمایی گام به گام برای ورود به دنیای لاراول</h2>
+        </div>
+    </div>
+    <span class="sidebar_toggle">
+        <em class="open-icon"></em>
+    </span>
+</header>
+
+  <section class="main-content columns is-fullheight">
+    <aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        
+        <li>
+        
+        
+          <span class="season">پیشگفتار</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson01/preface/">- ماجرای این کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson02/thanks/">- تشکر می‌کنم</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson03/support/">- حمایت از کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">- بازخورد</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/">- انتشار کتاب</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل اول: پیش به سوی صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson01/mvc/">- معماری MVC</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson02/composer/">- کامپوزر و مدیریت بسته‌ها</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل دوم: لاراول، در حد صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson01/install/">- نصب و راه اندازی لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson02/folders/">- ساختار پوشه‌های لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson03/artisan/">- کنسول آرتیزان</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل سوم: شروع واقعی با دیتابیس</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson01/config/">- پیکربندی‌ها در لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson02/database/">- پیکربندی دیتابیس</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson03/understanding-migrations/">- درک مفهوم مایگرشن</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson04/migrations/">- طراحی دیتابیس با مایگرشن</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+    </ul>
+  </div>
+</aside>
+
+    <div class="container column">
+        <div class="section" id="content">
+
+  
+      
+          <h1 class="list">فصل سوم: شروع واقعی با دیتابیس</h1>
+      
+
+    <h3 class="list">طراحی دیتابیس با مایگرشن</h3>
+
+    <div class="content-body content">
+    <a name="more"></a>
+<p>در درس پیش، با فلسفه و مفهوم مایگرشن‌ها آشنا شدیم و دانستیم که خود این مفاهیم اختراع لاراول نیستند و خیلی پیش از آن به وجود آمده‌اند.</p>
+
+<p>ساختار فایل‌های مایگرشن را آموختیم و با نحوه‌ی عملکرد آن‌ها آشنا شدیم و حالا در این درس، وقت آن رسیده که با ابزارهای طراحی دیتابیس آشنا شویم و این ابزارها را در دل فایل‌های مایگرشن به کار اندازیم.</p>
+
+<h1>متدهای بالا و پایین</h1>
+
+<p>همان طور که گفتیم، فایل‌های مایگرشن کلاس‌هایی معمولی در زبان پی‌اچ‌پی هستند که دو متد عمومی <code>up</code> و <code>down</code> را در خود جای داده‌اند و طراحی دیتابیس‌های ما در دل این دو متد صورت می‌گیرد.</p>
+
+<p>همچنین گفتیم روند اجرای مایگرشن، همانند جلو و عقب رفتن در نوار زمان است. هنگام جلو رفتن چیزی را برپا می‌کنیم و هنگام بازگشت به عقب، ساخته‌ای را فرو می‌ریزیم. </p>
+
+<p>هر کلاس مایگرشن، باید قادر به انجام هر دو کار باشد و به همین سبب هم دو متد، یکی به نام «بالا» و دیگری به نام «پایین» دارد. </p>
+
+<ul>
+<li>متد <code>up</code> مسئول اجرای حرکت رو به جلوی هر مایگرشن است که چیزی را برپا می‌کند.</li>
+<li>متد <code>down</code> مسئول اجرای حرکت رو به عقب هر مایگرشن است که بنایی را تخریب می‌کند.</li>
+</ul>
+
+<p>به همین سادگی!</p>
+
+<h2>حرکت‌های جلو و عقب</h2>
+
+<p>بد نیست یک بار دیگر، مروری سریع بر فرمان‌های مایگرشن آرتیزان داشته باشیم.</p>
+
+<p>در حرکت رو به جلو، باید همه‌ی مایگرشن‌های موجود را به خط کنیم و متدهای ‍<code>up</code> یکایک آن‌ها را <strong>به ترتیب</strong> اجرا نماییم. دستور زیر همین کار را می‌کند.</p>
+
+<pre><code class="language-bash">php artisan migrate
+</code></pre>
+
+<p>در حرکت رو به عقب، باید همه‌ی مایگرشن‌هایی که آخرین بار چیزی ساخته‌اند را به خط کنیم و متدهای ‍<code>down</code> یکایک آن‌ها را <strong>به ترتیب معکوس</strong> اجرا نماییم. دستور زیر همین کار را می‌کند.</p>
+
+<pre><code class="language-bash">php artisan migrate:rollback
+</code></pre>
+
+<p>این همه‌ی کاری است که با مایگرشن می‌توانیم انجام بدهیم. دستورهای بعدی، کم و بیش ترکیبی از همین دو دستور هستند.</p>
+
+<p>برای آن که همه چیز را خراب کنیم (یعنی آن قدر <code>migrate:rollback</code> کنیم که چیزی باقی نماند):</p>
+
+<pre><code class="language-bash">php artisan migrate:reset
+</code></pre>
+
+<p>برای آن که همه چیز را خراب کنیم و از نو بسازیم (یعنی <code>migrate:reset</code> کنیم و دوباره ‍<code>migrate</code> نماییم):</p>
+
+<pre><code class="language-bash">php artisan mirgate:refresh
+</code></pre>
+
+<h1 id="schema">کتابخانه‌ای به نام Schema</h1>
+
+<p>هر کاری که در مایگرشن انجام می‌شود،  چه در متد <code>up</code> قرار بگیرد و در پی بنا کردن چیزی باشد، و چه در متد <code>down</code> قرار بگیرد و در پی تخریب چیزی باشد، در واقع کاری است که روی یکی (و فقط یکی) از جدول‌های بانک اطلاعاتی ما انجام می‌شود. </p>
+
+<ul>
+<li>گاهی می‌خواهیم جدول جدیدی بسازیم و فیلدهایش را مرتب کنیم؛</li>
+<li>گاهی می‌خواهیم جدولی که داشته‌ایم را خراب کنیم؛</li>
+<li>و گاهی هم می‌خواهیم جدولی را تغییر دهیم.</li>
+</ul>
+
+<h5>در مایگرشن، هزار و یک کار دیگر هم می‌توانیم انجام بدهیم، مثلا یک خط برنامه بنویسیم که «سلام دنیا»ی معروف را به ما بگوید و یا فرمی را جلوی کاربر بگذاریم که پر کند. بله می‌توانیم و احتمالاً کار هم می‌کند. اما هر سخن جایی و هر نکته مکانی دارد. مایگرشن جای این جور کارها که گفتیم نیست.</h5>
+
+<p>حالا که هرچه در متدهای <code>up</code> و ‍<code>down</code> کلاس‌های مایگرشن می‌نویسم از جنس کار با جداول دیتابیس است، خوب است کتابخانه‌ای داشته باشیم و تمام این کارها را با آن انجام بدهیم؛ کتابخانه‌ای که از تمام انواع دیتابیس تحت حمایت لاراول، پشتیبانی کند و ما لازم نباشد برای هر کدام خط جداگانه‌ای بنویسیم.</p>
+
+<p>چنین کتابخانه‌ای در لاراول وجود دارد و نامش ‍<code>Schema</code> است.</p>
+
+<h6>به دلیل محدودیت زبان فارسی، چاره‌ای جز نوشتن این کلمه به صورت «اسکیما» نداریم. اما شما هنگام خواندن، الف ابتدای آن را تا جای ممکن نادیده بگیرید و روی حرف سین، یک سکون بگذارید: «سْکیما»</h6>
+
+<h2>اسکیما را از کجا بیاوریم؟</h2>
+
+<p>نگران نباشید. </p>
+
+<p>کارها در لاراول راحت‌تر از چیزی است که تصور می‌شود.</p>
+
+<p>همان موقع که آرتیزان عزیز، فایل مایگرشن را برای ما می‌سازد و متدهای <code>up</code> و <code>down</code> را در آن جاسازی می‌کند، کلاس <code>Schema</code> را هم در بخش وابستگی‌های مایگرشن فراخوانی می‌کند.</p>
+
+<p><img src="/laravel-0-to-60/images/migration-schema.jpg" alt="Migration Schema" id="migrationschema" /></p>
+
+<p>اجازه بدهید معرفی متدهای اسکیما را از ساده‌ترین‌های آن‌ها آغاز کنیم.</p>
+
+<h2>حذف جدول</h2>
+
+<p>اسکیما دو متد استاتیک برای حذف یک جدول در اختیار ما می‌گذارد که کاربرد آن‌ها، یکی از دیگری ساده‌تر است.</p>
+
+<p>در اولین متد، می‌توانیم جدولی را ‍<code>drop</code> کنیم:</p>
+
+<pre><code class="language-php">Schema::drop('missions');
+</code></pre>
+
+<p>و در دومین متد، هم همین طور:</p>
+
+<pre><code class="language-php">Schema:dropIfExists('missions');
+</code></pre>
+
+<p>دستور دوم، همان طور که از نام آن برمی‌آید، پیش از اقدام به حذف جدول، از وجود آن اطمینان حاصل می‌کند و ناگفته پیداست که هیچ عقل سلیمی با وجود دستور دوم، سراغ دستور نسبتاً خطرناک اولی نمی‌رود.</p>
+
+<h2>تغییر نام جدول</h2>
+
+<p>متدی که برای تغییر نام در اختیار ما گذاشته شده، از متدهای حذف هم ساده‌تر هستند.</p>
+
+<pre><code class="language-php">Schema:rename($previous_name , $new_name)
+</code></pre>
+
+<p>لازم است توضیح دهم که آرگومان اول نام قدیمی یک جدول است و آرگومان دوم نام جدیدی است که می‌خواهیم بر آن بگذاریم؟</p>
+
+<p>بعید می‌دانم لازم باشد.</p>
+
+<h2>ساخت جدول‌</h2>
+
+<p>متدی که برای ساخت جدول در نظر گرفته شده است، دو آرگومان می‌گیرد.</p>
+
+<pre><code class="language-php">Schema::create('missions' , function (Blueprint $table) {});
+</code></pre>
+
+<p>آرگومان اول نام جدولی است که می‌سازید و آرگومان دوم، تابعی از نوع Closure است که ستون‌های آن جدول را تعیین می‌کند و در همین درس به آن خواهیم پرداخت.</p>
+
+<h2>تغییرات درون جدول</h2>
+
+<p>گاهی فقط می‌خواهیم جدولی را انتخاب کنیم و ساختار درونی آن را تغییر دهیم. متد <code>()table</code> برای همین روزهاست. </p>
+
+<pre><code class="language-php">Schema:table('missions' , function (Blueprint $table) {});
+</code></pre>
+
+<p>آرگومان‌های ورودی این متد نیز درست مانند متد <code>()create</code> است که اولی نام جدول را در بر می‌گیرد و دومی <em>بستار</em> (Closure)حاوی دستورات تعیین ساختار جدول را.</p>
+
+<h2>به عنوان تمرین</h2>
+
+<p>این کتاب [مثلاً] قرار است بار آموزشی داشته باشد و بنا نیست چیزهایی را بگوییم و عبور کنیم. بنابراین اجازه بدهید همین جا توقفی کنیم و یک مرور کلی داشته باشیم.</p>
+
+<p>در درس پیش، که به <a href="/laravel-0-to-60/chapter03/lesson03/understanding-migrations/">درک مفهوم مایگرشن</a> اختصاص داشت، دستورهای آرتیزان برای تولید فایل‌های مایگرشن را آموختیم.</p>
+
+<p>اگر با من جلو آمده باشید و واقعاً این فایل‌ها را ساخته باشید (که امیدوارم چنین کرده باشید)، خوب است همین حالا نگاه دوباره‌ای به داخلشان بیاندازید. اگر هم این کارها را نکرده‌اید، هنوز دیر نشده است.</p>
+
+<p>دیدیم که آرتیزان فایل‌های مایگرشن را به درخواست ما ایجاد کرد و متدهای <code>up</code> و ‍‍‍<code>down</code> را در آن‌ها گذاشت و دستوراتی را نیز که حدس می‌زد لازم داریم در دلشان نهاد. </p>
+
+<p>به عنوان تمرین، نگاهی به همه‌ی فایل‌های مایگرشنی که در اختیار دارید بیاندازید و کاربرد دستورات اسکیما را در آن‌ها بیابید و سعی کنید توضیح دهید که چرا برخی از آن‌ها در متد <code>up</code> جای گرفته‌اند و برخی در متد <code>down‍</code>.</p>
+
+<h1 id="blueprint">کتابخانه‌ای به نام Blueprint</h1>
+
+<p>دیدیم که چطور می‌توانیم به کمک اسکیما، جدولی را بسازیم (متد <code>create</code>) یا برای تغییرات فراخوانی کنیم (متد <code>table</code>). </p>
+
+<p>این دو متد را عمداً در انتهای عنوان پیش قرار دادم که بتوانید با چند پاراگراف عقب رفتن در متن، نگاه دوباره‌ای به الگوی اجرای آن‌ها بیاندازید و ببینید که چطور یک بستار به عنوان آرگومان دوم این متدها مورد استفاده قرار گرفته و شیئی از نوع <code>Blueprint</code> به آن پاس داده شده است.</p>
+
+<h6 id="https:fa.wikipedia.orgwikid8a8d984d988d9bed8b1db8cd986d8aa.">واژه‌ی بلوپرینت، به معنی «نقشه‌ی ساخت»، عبارتی است که از صنعت معماری وام گرفته شده است. <a href="https://fa.wikipedia.org/wiki/%D8%A8%D9%84%D9%88%D9%BE%D8%B1%DB%8C%D9%86%D8%AA">بلوپرینت</a>، که در قرن ۱۹ اختراع شد، این امکان را فراهم می‌کرد از یک نقشه معماری با سرعت و دقت زیادی به تعداد انبوه تکثیر شود.</h6>
+
+<p>بلوپرینت در لاراول، کلاسی است که متدهای لازم برای ایجاد و سامان‌دهی به ستون‌ها و ایندکس‌ها را ارائه می‌دهد و به کمک آن می‌توانیم طراحی دیتابیس خود را به‌سادگی و با زبانی شبیه به زبان آدمیزاد انجام دهیم. </p>
+
+<p>آرتیزان، بلوپرینت را نیز همچون اسکیما، به طور خودکار در ابتدای فایل‌های مایگرشن فراخوانی کرده است و برای استفاده از بلوپرینت، کار خاصی لازم نیست انجام دهیم.</p>
+
+<p><img src="/laravel-0-to-60/images/migration-blueprint.jpg" alt="Migration Blueprint" id="migrationblueprint" /></p>
+
+<p>فقط لازم است که از متدهای شیء <code>table$</code> که از روی کلاس <code>Blueprint</code> ساخته شده، به شرحی که اینجا به آن خواهیم پرداخت، استفاده کنیم.</p>
+
+<h1>تعریف ستون‌ها با بلوپرینت</h1>
+
+<p>ساده‌ترین کار در فرآیند ساخت مایگریشن‌ها، ایجاد ستون‌هاست. بلوپرینت متدهای متنوعی با نام هر یک از انواع داده تحت حمایت بیشتر دیتابیس‌ها در اختیار ما می‌گذارد که به عنوان پارامتر نخست، نام ستون را دریافت می‌کنند.</p>
+
+<h2>ستون افزایش خودکار</h2>
+
+<p>مرسوم است که نخستین ستون هر جدول را <code>i‍d</code> می‌نامند و در حالت افزایش خودکار قرار می‌دهند و <code>primary index</code> جدول را روی آن تنظیم می‌کنند. متدهای زیر همین کار را به روش‌های مختلف انجام می‌دهند.</p>
+
+<pre><code class="language-php">$table-&gt;increments('id');
+$table-&gt;bigIncrements('id');
+$table-&gt;mediumIncrements('id')
+$table-&gt;smallIncrements('id');
+$table-&gt;tinyIncrements('id');
+</code></pre>
+
+<p>در قریب به اتفاق برنامه‌هایی که می‌نویسیم از همان نخستین متد استفاده می‌کنیم و آرتیزان هم که متوجه این موضوع هست، در دستورات مایگریشن‌ساز خود، از این متد استفاده می‌کند. به فایل ساخت جدول <code>missions</code> که با هم ساختیم و فایلی که لاراول خودش برای ساخت جدول <code>users</code> ساخته بود و در جعبه گذاشته بود نگاه کنید و کاربرد این متد را ببینید.</p>
+
+<h2>ستون‌های عددی</h2>
+
+<p>متدهای زیر برای تعریف ستون‌های عدد صحیح به کار می‌روند که هر کدام محدوده و بازه‌ای از اعداد را تحت پوشش قرار می‌دهند که موضوع بحث این کتاب نیست.</p>
+
+<pre><code class="language-php">$table-&gt;integer('age');
+$table-&gt;smallInteger('age');
+$table-&gt;mediumInteger('age');
+$table-&gt;bigInteger('age');
+$table-&gt;unsignedInteger('age');
+$table-&gt;unsignedSmallInteger('age');
+$table-&gt;unsignedMediumInteger('age');
+$table-&gt;unsignedTinyInteger('age');
+</code></pre>
+
+<p>متدهای زیر برای تعریف اعداد اعشاری به کار می‌روند. پارامتر دوم تعداد کل ارقام و پارامتر سوم تعداد ارقام بخش اعشار را مشخص می‌کنند.</p>
+
+<pre><code class="language-php">$table-&gt;decimal('amount', 8, 2);
+$table-&gt;double('amount', 8, 2);
+$table-&gt;float('amount', 8, 2);
+</code></pre>
+
+<p>اگرچه نوع داده‌ی <code>BOOLEAN</code> در بیشتر انواع رایج دیتابیس تعریف شده، در <code>mySql</code> چنانچه مرسوم است از <code>TINYINT</code> برای ذخیره‌ی مقدارهای منطقی استفاده می‌کنند. بلوپرینت، متد <code>()boolean</code> را برای این نوع از داده‌ها معرفی کرده، اما همچنان برای ساخت جدول در <code>mySql</code> از <code>TINYINT</code> بهره می‌گیرد. </p>
+
+<p>با این حال، بهتر است برای خوانا شدن کد و هماهنگی با سایر دیتابیس‌ها، برای متغیرهای منطقی خود از متدی که برای همین کار در اختیار ماست استفاده کنیم و تصمیم را به عهده‌ی لاراول بگذاریم تا با توجه به دیتابیس ما، بهترین انتخاب را انجام دهد.</p>
+
+<pre><code class="language-php">$table-&gt;boolean('active')
+</code></pre>
+
+<h2>رشته و متن</h2>
+
+<p>متدهای زیر برای تعریف ستون‌های رشته‌ای، با طول دلخواه به کار می‌روند. اولی همان طور که از نامش پیداست، ستونی با نوع <code>CHAR</code> تشکیل می‌دهد و دومی <code>VARCHAR</code> می‌سازد و از آنجا که استفاده از آن متداول‌تر است، لاراول عبارت انگلیسی زیباتری را برای آن برگزیده تا به خوانایی کد کمک کند.</p>
+
+<pre><code>$table-&gt;char('name', 100);
+$table-&gt;string('name', 100);
+</code></pre>
+
+<p>سه متد زیر که برای ذخیره‌سازی متن به کار می‌روند، به ترتیب منطبق بر نوع داده‌های <code>TEXT</code>، <code>MEDIUMTEXT</code> و <code>LONGTEXT</code> در دیتابیس‌ها هستند که بنا بر مستندات <code>mySql</code>، اولی ۶۴ کیلوبایت، دومی ۱۶ مگابایت، و سومی ۴ گیگابایت ظرفیت دارد. </p>
+
+<pre><code>$table-&gt;text('description');
+$table-&gt;mediumText('description');
+$table-&gt;longText('description');
+</code></pre>
+
+<h2>نگهداری زمان</h2>
+
+<p>هر کدام از متدهای زیر،‌ معادل نوع داده‌ای متناظر با همان نام در دیتابیس هستند که برای نگهداری زمان، یا تاریخ و زمان به کار می‌روند.</p>
+
+<p>خواننده‌ی این کتاب می‌داند که برای ذخیره‌ی تاریخ‌های جلالی نیز بهتر است زمان را با فرمت استاندارد میلادی ثبت کند و تبدیل تاریخ را در مرحله‌ی نمایش به کاربر انجام دهد و نیازی به اشاره‌ی من نیست.</p>
+
+<pre><code class="language-php">$table-&gt;time('sunrise');
+$table-&gt;timeTz('sunrise');
+$table-&gt;timestamp('added_on');
+$table-&gt;timestampTz('added_on');
+$table-&gt;year('birth_year');
+$table-&gt;dateTime('created_at');
+$table-&gt;dateTimeTz('created_at');
+</code></pre>
+
+<h2>زمان‌های مهم</h2>
+
+<p>سیستم مدیریت مدل‌های لاراول (موسوم به الیکوئنت)، زمان اضافه شدن و آخرین به‌روزرسانی رکوردها را به صورت پیش‌فرض ثبت می‌کند و برای این کار به دو ستون <code>created_at</code> و <code>updated_at</code> نیاز دارد.</p>
+
+<p>اکنون می‌دانیم که این دو ستون با دستورهای زیر ساخته می‌شوند.</p>
+
+<pre><code class="language-php">$table-&gt;timestamp('created_at')-&gt;nullable();
+$table-&gt;timestamp('updated_at')-&gt;nullable();
+</code></pre>
+
+<p>اما بلوپرینت راه بهتری هم برای این کار تکراری درست کرده و ما را از درج این دو خط طولانی، آن هم با به‌کارگیری متد عجیب و غریب <code>()nullable</code> که تاکنون سخنی از آن به میان نیاورده‌ایم، بی‌نیاز ساخته است:</p>
+
+<pre><code>$table-&gt;timestamps();
+</code></pre>
+
+<p>با همین یک دستور که در انتهای فیلدهای خودتان قرار می‌دهید، از لاراول می‌خواهید ترتیب ثبت آن دو ستون دلخواه خود را نیز بدهد.</p>
+
+<h2>ستون زباله‌دان</h2>
+
+<p>سیستم‌عامل‌های متداول دسکتاپ، فایل‌هایی که پاک می‌کنیم را به زباله‌دان منتقل می‌کنند و تا وقتی آن‌ها را از زباله‌دان هم حذف نکنیم، کاری به کارشان ندارند. در واقع فرمان پاک کردن فایل‌ها در این سیستم‌های عامل، فقط فایل‌ها را موقتاً از دسترس ما دور می‌کنند و بس.</p>
+
+<p>در برنامه‌های وبی که ما می‌نویسیم نیز این قابلیت به کار می‌آید. </p>
+
+<p>وبلاگ‌نویس تازه‌کاری را در نظر بگیرید که در برخورد با کم‌محلی مخاطبان خود، دچار افسردگی می‌شود و در نیمه‌های شب بهترین نوشته‌ی خود را پاک می‌کند و صبح پشیمان می‌شود. اگر ما هم واقعاً آن رکورد را پاک کرده باشیم، صبح فردا کاری از دستمان ساخته نیست.</p>
+
+<p>راه انداختن یک سیستم زباله‌دان در جدول‌های اطلاعاتی کار سختی نیست، اما ظرایفی دارد که باید مراقبشان باشیم. فریمورک قدرتمند لاراول با پشتیبانی از این قابلیت، کار ما را ساده می‌کند.</p>
+
+<p>در مرحله‌ی تولید مایگرشن، تنها کاری که باید بکنیم ایجاد ستونی برای این کار است، که به کمک بلوپرینت، با سادگی هرچه تمام‌تر انجام می‌شود.</p>
+
+<pre><code class="language-php">$table-&gt;softDeletes();
+</code></pre>
+
+<p>با این کار، یک فیلد قابل <code>null</code> شدن به نام <code>deleted_at</code> در جدول اضافه می‌شود. در درس‌های بعدی می‌آموزیم که چطور این ستون جالب را در عمل به کار بگیریم. </p>
+
+<h2>زنجیری از جزئیات</h2>
+
+<p>برای آن که مشخص کنیم ستون مورد نظر ما می‌تواند مقدار <code>null</code> را بپذیرد، از متد <code>()nullable</code> در انتهای همان دستور ایجاد ستون استفاده می‌کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;string('email')-&gt;nullable();
+</code></pre>
+
+<p>با استفاده از متد <code>()default</code>، مقداری پیش‌فرض برای ستون خود تعیین می‌کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;boolean('active')-&gt;default(true);
+</code></pre>
+
+<p>برای درج کامنت، از متد <code>()comment</code> کمک می‌گیریم:</p>
+
+<pre><code class="language-php">$table-&gt;string('email')-&gt;comment('This is Email');
+</code></pre>
+
+<p>برای آن که زمان فعلی را به عنوان پیش‌فرض یک ستون زمانی تعیین کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;string('created_at')-&gt;useCurrent();
+</code></pre>
+
+<p>برای آن که کدبندی نویسه را به چیزی غیر از پیش‌فرض دیتابیس تغییر دهیم:</p>
+
+<pre><code class="language-php">$table-&gt;charset('utf8')
+</code></pre>
+
+<p>و یا برای تغییر <code>collation</code>:</p>
+
+<pre><code class="language-php">$table-&gt;collation('utf8_persian_ci')
+</code></pre>
+
+<p>از همه جالب‌تر این که این متدهای زنجیره‌ای را می‌توانید به دنبال هم و بدون ترتیب مشخص وارد نمایید:</p>
+
+<pre><code class="language-php">$table-&gt;string('email')-&gt;nullable()-&gt;comment('folan')-&gt;charset('utf8')
+</code></pre>
+
+<h1>ایندکس‌ها در بلوپرینت</h1>
+
+<p>ایندکس‌گذاری درست در طراحی یک جدول، تأثیر مستقیم و بسیار مهمی در بازدهی و عملکرد برنامه دارد. بلوپرینت، موتور جدول‌سازی لاراول، انواع و اقسام ایندکس‌ها را پشتیبانی می‌کند و راه‌های مختلفی برای تعریف آن‌ها ارائه می‌کند.</p>
+
+<h2>ایندکس معمولی</h2>
+
+<p>در همان خطی که ستون را تعریف کردید، می‌توانید متد <code>()index</code> را نیز به صورت زنجیره‌ای فرا بخوانید و با این کار از لاراول بخواهید ایندکسی را برای آن ستون تعریف کند.</p>
+
+<pre><code class="language-php">$table-&gt;string('name')-&gt;index();
+</code></pre>
+
+<p>به جای این کار، ایندکس را می‌توانید پس از تعریف یک ستون نیز در خطی مستقل تعیین کنید.</p>
+
+<pre><code class="language-php">$table-&gt;index('name')
+</code></pre>
+
+<p>همین متد بالا می‌تواند به جای نام یک ستون، آرایه‌ای از نام‌های چند ستون مختلف بگیرد و ایندکسی مرکب بسازد.</p>
+
+<pre><code class="language-php">$table-&gt;index(['last_name','first_name']);
+</code></pre>
+
+<p>لاراول به صورت پیش‌فرض نام خوبی برای ایندکس‌هایمان می‌گذارد، اما اگر دوست داریم، می‌توانیم با استفاده از آرگومان دوم متد <code>()index</code>، نام مورد علاقه‌ی خودمان را تحمیل کنیم.</p>
+
+<pre><code class="language-php">$table-&gt;index(['last_name','first_name'] , 'index_name');
+</code></pre>
+
+<h2>ایندکس یکتا</h2>
+
+<p>ایندکس‌های یکتا با متد <code>()unique</code> تعریف می‌شوند و هر چه برای ایندکس‌های معمولی گفتیم، در ایندکس‌های یکتا نیز به کار می‌آیند.</p>
+
+<p>می‌توانیم آن‌ها را به صورت زنجیره‌ای در انتهای همان خط تعریف ستون، تعریف نماییم:</p>
+
+<pre><code class="language-php">$table-&gt;string('username')-&gt;unique();
+</code></pre>
+
+<p>می‌توانیم پس از تعریف ستون، در خطی مستقل آن‌ها را تعریف کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;unique('username');
+</code></pre>
+
+<p>و می‌توانیم با استفاده از آرگومان دوم، نام دلخواه خودمان را به آن تحمیل کنیم.</p>
+
+<pre><code class="language-php">$table-&gt;unique('username','unique_username');
+</code></pre>
+
+<h2>ایندکس اصلی</h2>
+
+<p>پیش از این، روش ثبت primary index را آموختیم و گفتیم که بهتر است به همان سنت مألوف چنگ بیاندازیم و اولین فیلد را به این شکل (دقیقاً به این شکل) تعریف کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;increments('id');
+</code></pre>
+
+<p>اگرچه همین تک‌خط همه‌ی کارهای ما را راه می‌اندازد، اما بد نیست اشاره کنیم که ثبت ایندکس اصلی نیز با روش‌هایی که برای ایندکس‌های معمولی و یکتا گفتیم امکان‌پذیر است.</p>
+
+<p>می‌توانیم از روش زنجیره‌ای برای تعریف آن استفاده کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;unsignedInteger('id')-&gt;autoIncrement();
+</code></pre>
+
+<p>می‌توانیم در خط جداگانه‌ای تعریفش کنیم:</p>
+
+<pre><code class="language-php">$table-&gt;unsignedInteger('id');
+$table-&gt;primary('id');
+</code></pre>
+
+<p>و می‌توانیم چند فیلد را با یکدیگر ترکیب نماییم:</p>
+
+<pre><code class="language-php">$table-&gt;primary(['id','parent_id']);
+</code></pre>
+
+<h2>کلیدهای خارجی</h2>
+
+<p>فرض کنید جدولی از دیدگاه‌ها داریم که هر دیدگاه توسط یکی از کاربران ارسال شده است. بیایید برای این کار یک ستون <code>user_id</code> بسازیم و به <code>id</code> در جدول <code>users</code> متصلش کنیم.</p>
+
+<pre><code class="language-php">$table-&gt;integer('user_id')-&gt;unsigned();
+$table-&gt;foreign('user_id')-&gt;references('id')-&gt;on('users');
+</code></pre>
+
+<p>حتی این موضوع که در صورت پاک شدن رکورد اصلی چه اتفاقی برای رکورد مرتبط می‌افتد را نیز می‌توانید در مایگرشن، و به کمک بلوپرینت، تعیین کنید.</p>
+
+<pre><code class="language-php">$table-&gt;foreign('user_id')
+    -&gt;refrences('id')
+    -&gt;on('users')
+    -&gt;onDelete('cascade'); // &lt;-- That Easy!
+</code></pre>
+
+<h1>ویرایش یک جدول با بلوپرینت</h1>
+
+<p>از آنجا که هنگام ویرایش جدول نیز همچون زمان ساخت، پای بلوپرینت در میان است، خیالمان می‌تواند راحت باشد که همان دستورهایی که پیش‌تر آموختیم، باز هم به کارمان می‌آیند و اسلوب کار همان است که دیدیم.</p>
+
+<p>جزئیاتی که ویرایش را از زمان ساخت متمایز می‌کنند، زیاد نیستند و با هم مرورشان می‌کنیم.</p>
+
+<h2>تعیین مکان ستون جدید</h2>
+
+<p>همه‌ی متدهایی که برای ساخت ستون‌ها معرفی کردیم، اینجا نیز کار می‌کنند. تفاوت ماجرا آن است که لازم است بتوانیم محل ستون‌های جدیدی که به ستون‌های قبلی اضافه می‌شوند را تعیین کنیم، هرچند که اجباری نیست و اگر چنین نکنیم، ستون‌ها به انتهای جدول پیشین اضافه می‌شوند.</p>
+
+<p>تعیین مکان نیز به سبک و سیاق بلوپرینت، با سادگی هرچه تمام‌تر و با زبانی نزدیک به زبان آدمیزاد صورت می‌گیرد.</p>
+
+<p>ممکن است بخواهیم ستون جدید را «بعد از» ستونی از ستون‌های موجود قرار دهیم: </p>
+
+<pre><code class="language-php">$table-&gt;tinyText('description')-&gt;after('text');
+</code></pre>
+
+<p>ممکن هم هست بخواهیم ستون جدید را در ابتدای جدول بگذاریم:</p>
+
+<pre><code class="language-php">$table-&gt;tinyText('description')-&gt;first();
+</code></pre>
+
+<p>هرچند بلوپرینت متد <code>()first</code> را سخاوتمندانه در اختیار ما گذاشته، اما استفاده از آن کار عاقلانه‌ای نیست. چرا که بنا بر پاره‌ای روایات، اولین ستون هر جدول را ستونی به نام <code>id</code> تشکیل می‌دهد که ایندکس اولیه ما نیز بر آن استوار است.</p>
+
+<h2>تغییر نام ستون</h2>
+
+<p>متد <code>()renameColumn</code>،  با الگوی ساده‌ی زیر، می‌تواند نام یک ستون را تغییر دهد.</p>
+
+<pre><code class="language-php">$table-&gt;renameColumn('from','to');
+</code></pre>
+
+<p>اما لاراول، به صورت پیش‌فرض، از این قابلیت پشتیبانی نمی‌کند و اجرای مایگرشنی که حاوی این متد است، سبب بروز خطا می‌شود. </p>
+
+<p>برای این کار به بسته‌ی <code>doctrine/dbal</code> نیاز دارید. نحوه‌ی نصب بسته‌ها را در همین کتاب، در درسی که به <a href="/laravel-0-to-60/chapter01/lesson02/composer/">کامپوزر و مدیریت بسته‌ها</a> اختصای داشت، مرور کردیم و در درس‌های بعدی نیز بیشتر به آن خواهیم پرداخت.</p>
+
+<h2>حذف ستون</h2>
+
+<p>متد ()dropColumn می‌تواند یک یا چند ستون موجود از جدول را حذف کند.</p>
+
+<pre><code class="language-php">$table-&gt;dropColumn('active')
+</code></pre>
+
+<p>برای حذف چند ستون، کافی‌ست آرایه‌ای از نام ستون‌ها را به عنوان آرگومان ارسال کنیم.</p>
+
+<pre><code class="language-php">$table-&gt;dropColumn(['age' , 'active'])
+</code></pre>
+
+<p>متأسفانه این متد در دیتابیس <code>SQLite</code> به صورت پیش‌فرض پشتیبانی نمی‌شود و پکیجی که برای تغییر نام ستون معرفی کردیم را نیاز خواهید داشت. اما در دیتابیس‌های دیگر بدون پکیج نیز قابل استفاده است.</p>
+
+<h2>تغییر در ایندکس‌ها</h2>
+
+<p>متدهای اضافه کردن ایندکس را مرور کردیم و همان‌ها اینجا هم کار می‌کنند. شاید به چند متدی که برای حذف ایندکس‌ها استفاده می‌شوند نیاز داشته باشید. </p>
+
+<p>لاراول متدهای زیر را ارائه می‌کند که از نامشان پیداست چه می‌کنند و به چه کار می‌آیند:</p>
+
+<pre><code class="language-php">$table-&gt;dropPrimary('users_id_primary');
+$table-&gt;dropUnique('users_email_unique');
+$table-&gt;dropIndex('geo_state_index');
+$table-&gt;dropForeign('posts_user_id_foreign');
+</code></pre>
+
+<p>همه‌ی این متدها از ورودی آرایه نیز پشتیبانی می‌کنند تا چندین ایندکس را هم‌زمان حذف کنند.</p>
+
+<h1 id="down">نگاهی دقیق‌تر به متد <code>down</code></h1>
+
+<p>نوشتن متد <code>down</code> برای بسیاری از تازه‌واردان به دنیای لاراول مبهم به نظر می‌رسد، اما منطق کار ساده‌تر از این حرف‌هاست.</p>
+
+<p>داستان از این قرار است که می‌بایست هر کار در متد <code>up</code> کردید را در متد <code>down</code> برعکس کنید. </p>
+
+<p>گفتیم و باز هم تکرار می‌کنیم که عملکرد مایگرشن، همانند حرکت در یک نوار زمان است. در حرکت رو به جلو، چیزهایی را می‌سازیم و برپا می‌کنیم، و طبیعی‌ست که در حرکت رو به عقب، باید بتوانیم همان‌هایی که ساخته‌ایم را تخریب کنیم.</p>
+
+<p>دستور <code>migrate</code> در کنسول آرتیزان، فایل‌های مایگرشن را یکی یکی و به ترتیب نامشان برمی‌گیرد و متدهای <code>up</code> را در آن‌ها اجرا می‌کند و چیزهایی را برپا می‌سازد. هنگام حرکت بازگشتی هم که همچون دستور آشنای <code>undo</code> عمل می‌کند، فایل‌های مایگرشن صف می‌شوند و این بار متدهای <code>down</code> موجود در آن‌ها، با ترتیب معکوس، اجرا می‌شوند.</p>
+
+<p>فلسفه‌ی مایگرشن آن است که ساخت و ساز جداول را به چرخه‌ی حیات برنامه بیاورد و این کار فقط با تکمیل درست متدهای <code>down</code> به صورت کامل میسر می‌شود. </p>
+
+<p>دستپاچه و هراسان نشوید. همه‌ی کاری که قرار است بکنید همین است: </p>
+
+<blockquote>
+  <p>هرچه در متد <code>up</code> نوشتید را در متد <code>down</code> برعکس کنید.</p>
+</blockquote>
+
+<p>هرچه در متد <code>up</code> ساختید را در متد <code>down</code> ویران کنید و هرچه در متد <code>up</code> ویراش کردید را در متد <code>down</code> به حال نخست بازگردانید.</p>
+
+<p>اگر در متد <code>up</code> جدولی ساخته‌اید، باید در متد <code>down</code> آن را <code>drop</code> کنید و این درست کاری است که استفاده از دستور ساخت مایگرشن به کمک آرتیزان، (به آن نحو که در درس پیش توضیح دادیم)، خودبه‌خود انجام می‌دهد.</p>
+
+<pre><code class="language-php">public function down()
+{
+    Schema::dropIfExists('missions');
+}
+</code></pre>
+
+<p>اگر در متد <code>up</code> ویرایشی را روی جدولی انجام دادید، یا ستون‌های جدیدی ساختید، در متد <code>down</code> آن ویرایش‌ها را به حال نخست بازگردانید و ستون‌های جدیدی که ساخته‌اید را دور بریزید. </p>
+
+<p>ساخت مایگرشن به کمک آرتیزان، به آن نحو که در بخش «ویرایش یک جدول» این درس گفتیم، چنین کاری را به صورت پیش‌فرض انجام نمی‌دهد (چون نمی‌تواند حدس بزند که در متد <code>up</code> چه نوشته‌اید) و خودتان باید زحمتش را بکشید.</p>
+
+<h3>یک مثال گام به گام...</h3>
+
+<p>فرض کنید می‌خواهیم قابلیت انقضای سفر را به جدول مأموریت‌های خود اضافه کنیم.</p>
+
+<h4>گام اول، آرتیزان</h4>
+
+<p>ابتدا با یک دستور آرتیزان، فایل مایگرشن مورد نیاز خود را می‌سازیم.</p>
+
+<pre><code class="language-bash">php artisan make:migration add_expiry_to_missions_table --table=missions
+</code></pre>
+
+<p>آرتیزان، با اجرای این دستور، فایلی که لازم داریم را برایمان می‌سازد و در جای درست قرار می‌دهد.
+<img src="/laravel-0-to-60/images/migration-edit-example.png" alt="Migration Edit Example" id="migrationeditexample" /></p>
+
+<p>و سپس کدهایی که می‌داند لازم داریم را در آن قرار می‌دهد. دقیقاً به این صورت:</p>
+
+<pre><code class="language-php">&lt;?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AddExpiryToMissionsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('missions', function (Blueprint $table) {
+            //
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('missions', function (Blueprint $table) {
+            //
+        });
+    }
+}
+</code></pre>
+
+<p>ملاحظه می‌فرمایید که متدهای ‍<code>up</code> و <code>down‍</code> سر جایشان گذاشته شده اند، اسکیما در آن‌ها به کار رفته و نام جدول را نیز که در دستور آرتیزان گنجانده بودیم، برایمان گذاشته و بستار (کلوژر) حاوی بلوپرینت را نیز ساخته است. </p>
+
+<p>از همه مهم‌تر آن که کلاس‌های اسکیما و بلوپرینت را نیز همچون کلاس والد، در بخش وابستگی‌های کلاس قرار داده و نیم‌اسپیس درست را نیز در فایل قید کرده است.</p>
+
+<h4>گام دوم، متد بالارونده</h4>
+
+<p>حالا وقت آن است که ستون‌هایی که می‌خواهیم اضافه کنیم را در متد <code>up</code> بنویسیم.</p>
+
+<pre><code class="language-php">public function up()
+{
+    Schema::table('missions', function (Blueprint $table) {
+        $table-&gt;timestamp('expired_at')-&gt;nullable()-&gt;after('description');
+        $table-&gt;boolean('is_expired')-&gt;default(0)-&gt;after('expired_at');
+    });
+}
+</code></pre>
+
+<p>در این مثال، فرض می‌کنیم که برای افزودن قابلیت انقضا به جدول مأموریت‌ها، به دو ستون نیاز داریم. </p>
+
+<ul>
+<li>ستون اول، تاریخ انقضا را در ذخیره می‌کند؛</li>
+<li>و ستون دوم، که از نوع <code>BOOLEAN</code> است، وضعیت انقضای سفر را در خود نگاه می‌دارد.</li>
+</ul>
+
+<h4>گام سوم، متد پایین‌رونده</h4>
+
+<p>متد <code>down</code> که قرار است همچون عملگرد <code>undo</code> به کار آید، کافی‌ست هرچه در متد <code>up</code> ساخته شده را تخریب کند.</p>
+
+<p>در متد <code>up</code> دو ستون به جدول اضافه کردیم و حالا تنها کاری که در متد <code>down</code> باید انجام دهیم، آن است که آن دو ستون اضافه را از بین ببریم.</p>
+
+<pre><code class="language-php">public function down()
+{
+    Schema::table('missions', function (Blueprint $table) {
+        $table-&gt;dropColumn(['expired_at', 'is_expired']);
+    });
+}
+</code></pre>
+
+<p>همین!</p>
+
+<p>واقعیت آن است که نوشتن متد <code>down‍</code> از متد ‍<code>up</code> هم ساده‌تر است!</p>
+
+<p>این طور نیست؟</p>
+
+<h1>تکرار یک هشدار</h1>
+
+<p>باز هم دقت کنید. </p>
+
+<p>اجرای دستورهای مایگرشن، فقط در فاز توسعه‌ی برنامه انجام می‌شود و خودتان باید مراقب اطلاعاتی که با حذف یک ستون یا جدول دور ریخته می‌شود باشید. </p>
+
+<p>لاراول نمی‌تواند حدس بزند که واقعاً آن داده‌ها را لازم دارید یا نه، اما می‌تواند مراقب باشد که در فاز بهره‌برداری از دستور <code>migrate</code> استفاده نکنید. </p>
+
+<p>اگر چنین کنید، اخطاری می‌گیرید.</p>
+
+<p><img src="/laravel-0-to-60/images/migration-warning.jpg" alt="Laravel Migration Warning" id="laravelmigrationwarning" /></p>
+
+<p>امیدوارم قرار دادن این اسکرین‌شات‌ها، باعث نشوند که خودتان آزمایش نکنید. برای آزمایش آنچه گفتم، کافی‌ست ابتدا محیط برنامه‌ی خود را در حالت production قرار دهید (به فایل ‍<code>env.</code> بروید و <code>APP_ENV</code> را از ‍<code>local</code> به ‍<code>production</code> تغییر دهید) و سپس با اجرای دستور مایگرشن در کنسول آرتیزان، تصویر بالا را در کنسول خودتان مشاهده کنید.</p>
+
+<h1>جان کلام</h1>
+
+<p>در این درس، با اسکیما و بلوپرینت، به عنوان قلب‌های تپنده‌ی فایل‌های مایگرشن آشنا شدیم و آموختیم که چطور به کمک آن‌ها می‌توانیم دیتابیس مجموعه‌ی خود را تعریف کنیم. در درس بعدی، مثالی عملی برای پروژه‌ی آپولوی خودمان را بررسی می‌کنیم و گام به گام جلو می‌رویم.</p>
+
+    </div>
+  
+
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="/laravel-0-to-60/chapter03/lesson03/understanding-migrations/" class="pagination-previous button is-primary is-outlined">
+    →
+    درک مفهوم مایگرشن
+  </a>
+    </nav>
+</div>
+    </div>
+
+  </section>
+
+  <footer class="columns hero section is-dark has-text-centered">
+        <div class="container ">
+            <div class="columns">
+
+                <div class="column">
+                    <div class="footer-header">
+                       به این جاها سر بزنید
+                    </div>
+                    <ul class="related-links has-text-centered">
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a>
+                        </li>
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson05/publish/">مجوز انتشار</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dutymess/laravel-0-to-60/issues" target="_blank">گزارش مشکلات</a>
+                        </li>
+                        <li>
+                          <a href="https://virgool.io/@taha" target="_blank">وبلاگ من در ویرگول</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.dutymess.ir" target="_blank">آن یکی وبلاگ من</a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/dutymessIr" target="_blank">و سرانجام، در توییتر</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="footer-header">
+                    لاراول از صفر تا شصت
+                    </div>
+                    <div class="socials">
+                      <a href="/laravel-0-to-60">
+                        <img class="cover" src="/laravel-0-to-60/images/cover-small.jpg">
+                      </a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="footer-header">
+                      از درس‌های جدید آگاه شوید
+                    </div>
+
+                    <form action="https://github.us17.list-manage.com/subscribe/post?u=8118b4a1f2130d821eb534012&amp;id=a8b16a6c37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate is-inline-block" target="_blank" novalidate>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input name="EMAIL" class="input" type="email" placeholder="عضویت در خبرنامه">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    عضویت
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    </form>
+
+                    <div class="text">
+                      برای ارسال خبرنامه از سرویس
+                      mailChimp
+                      بهره می‌برم و فقط خبرهای مرتبط با همین کتاب را اطلاع‌رسانی می‌کنم.
+                      از نشانی‌ها حتی برای پروژه‌های بعدی و مشابه خودم هم استفاده نمی‌کنم
+                      چه برسد به آن که تبلیغ و هرزنامه بفرستم یا
+                      خدای ناکرده در اختیار کس دیگری قرار دهم.
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="has-text-centered credit">
+              <div>
+              کتاب
+              <a href="https://github.com/dutymess/laravel-0-to-60" target="_blank">
+              «لاراول، از صفر تا شصت»
+              </a>
+              با مجوز
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/" >
+                کرییتیو کامنز
+              </a>
+              به صورت رایگان و آزاد منتشر می‌شود و حقوق آن، در چارچوب مجوز یادشده، متعلق به نویسنده
+              <a href="https://virgool.io/@taha" target="_blank">
+                (طه کامکار)
+              </a>
+              است.
+
+              </div>
+              <div>
+                ارائه شده بر بستر
+                <a href="https://miraxy.github.io/doc-fa/" target="_blank">میرا</a>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="/laravel-0-to-60/static/js/jquery.min.js"></script>
+<script src="/laravel-0-to-60/static/js/highlight.pack.js"></script>
+<script src="/laravel-0-to-60/static/js/highlightjs-line-numbers.min.js"></script>
+<script src="/laravel-0-to-60/static/js/app.js"></script>
+
+
+</body>
+</html>
