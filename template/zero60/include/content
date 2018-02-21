@@ -17,6 +17,16 @@
 
   <img class="cover" src="/laravel-0-to-60/images/cover.jpg">
 
+  <div style="text-align:center">
+    کتاب رایگان و آزاد، و در دست تکمیل است.
+  </div>
+
+  <div style="text-align:center">
+    <a href="/laravel-0-to-60/chapter00/lesson01/preface/">
+      از اینجا شروع به خواندن کنید
+    </a>
+  </div>
+
 
 {{ END }}
 
