@@ -355,6 +355,7 @@ footer .socials iframe{
 
 footer .socials img {
 	max-width: 100%;
+	display: inline-block;
 }
 
 footer .related-links a{
