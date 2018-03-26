@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69680858-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69680858-2');
+</script>
+
+<meta name="msvalidate.01" content="584FCFDB107AA46299F59A2F22EBDF34" />
+
+<title>لاراول، از صفر تا شصت | ساخت مدل‌ها در لاراول</title>
+
+<meta charset="utf-8">
+<meta name="description" content="راهنمایی گام به گام برای ورود به دنیای لاراول">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://dutymess.github.io/laravel-0-to-60">
+<meta property="og:site_name" content="لاراول، از صفر تا شصت">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+
+  <link rel="short icon" href="/static/img/mira.png">
+  <link href="/laravel-0-to-60/static/node_modules/bulma-rtl/css/bulma-rtl.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/style.css" rel="stylesheet">
+  <link href="/laravel-0-to-60/static/zero60/agate.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha13/dist/font-face.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <header class="hero is-info columns">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+              <a href="/laravel-0-to-60">
+                لاراول، از صفر تا شصت
+              </a>
+            </h1>
+            <h2 class="subtitle">راهنمایی گام به گام برای ورود به دنیای لاراول</h2>
+        </div>
+    </div>
+    <span class="sidebar_toggle">
+        <em class="open-icon"></em>
+    </span>
+</header>
+
+  <section class="main-content columns is-fullheight">
+    <aside id="sidebar" class="column is-one-quarter-desktop is-one-third-tablet section ">
+  <div class="sidebar__inner">
+    <ul class="menu-list">
+        
+        <li>
+        
+        
+          <span class="season">پیشگفتار</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson01/preface/">- ماجرای این کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson02/thanks/">- تشکر می‌کنم</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson03/support/">- حمایت از کتاب</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">- بازخورد</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/">- انتشار کتاب</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل اول: پیش به سوی صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson01/mvc/">- معماری MVC</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter01/lesson02/composer/">- کامپوزر و مدیریت بسته‌ها</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل دوم: لاراول، در حد صفر</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson01/install/">- نصب و راه اندازی لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson02/folders/">- ساختار پوشه‌های لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter02/lesson03/artisan/">- کنسول آرتیزان</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل سوم: شروع واقعی با دیتابیس</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson01/config/">- پیکربندی‌ها در لاراول</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson02/database/">- پیکربندی دیتابیس</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson03/understanding-migrations/">- درک مفهوم مایگرشن</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson04/migrations/">- طراحی دیتابیس با مایگرشن</a>
+            </li>
+        
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter03/lesson05/apollo-tables/">- جدول‌هایی برای آپولو</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+        <li>
+        
+        
+          <span class="season">فصل چهارم: لایه مدل</span>
+          <ul>
+        
+            <li>
+              <a href="/laravel-0-to-60/chapter04/lesson01/model-definition/">- ساخت مدل‌ها در لاراول</a>
+            </li>
+        
+        </ul>
+        </li>
+        
+    </ul>
+  </div>
+</aside>
+
+    <div class="container column">
+        <div class="section" id="content">
+
+  
+      
+          <h1 class="list">فصل چهارم: لایه مدل</h1>
+      
+
+    <h3 class="list">ساخت مدل‌ها در لاراول</h3>
+
+    <div class="content-body content">
+    <a name="more"></a>
+<p>پروژه‌های واقعی با طراحی دیتابیس آغاز می‌شوند و ما هم فصل پیش را به آشنایی با پیکربندی‌ها و طراحی جدول‌های اطلاعاتی با مایگرشن اختصاص دادیم. موضوع فصل چهارم کتاب لایه‌ی مدل است‌ که بار اصلی پردازش داده‌ها در برنامه را بر دوش می‌کشد و از این نظر، قلب پردازشی بیشتر پروژه‌ها قلمداد می‌شود. </p>
+
+<p>درس نخست از این فصل، به آشنایی با فلسفه‌ی مدل‌ها، نحوه‌ی ساخت آن‌ها، و چند نکته‌ی ریز در این رابطه اختصاص دارد.</p>
+
+<h6>هرچند این سطرها را در نخستین ساعت‌های سال ۱۳۹۷ می‌نویسم، اما سال نو را تبریک نمی‌گویم، چون معلوم نیست شما که آن را می‌خوانید در چه زمانی به سر می‌برید.</h6>
+
+<h1>لایه مدل در لاراول</h1>
+
+<p>در فصل نخست این کتاب، کمی در مورد معماری سه‌لایه‌ی «مدل ـ نمایش ـ کنترلر»، موسوم به MVC توضیح داده شد (<a href="/laravel-0-to-60/chapter01/lesson01/mvc/">+</a>) که بنا بر تکرار آن ندارم.</p>
+
+<blockquote>
+  <p>پردازش داده‌ها، چه پیش از ذخیره‌ی آن‌ها و چه پس از آن در هنگام استفاده، بر عهده‌ی لایه‌ی مدل است.</p>
+</blockquote>
+
+<p>همان جا گفتم با این که لاراول یک فریمورک مبتنی بر MVC نیست و چنین ادعایی هم ندارد، اما به جداسازی لایه‌ها که روح این معماری‌ست وفادار مانده و همین برای ما کافی‌ست که مدل را به عنوان یک لایه‌ی مستقل در این کتاب مورد بررسی قرار دهیم و به یاد داشته باشیم که:</p>
+
+<blockquote>
+  <p>مدل‌ها نسبت به آنچه در بیرونشان روی می‌دهد‌، نابینا هستند. این که داده‌هایی که ذخیره می‌شوند از کجا و به چه طریقی به دست آمده‌اند و این که داده‌هایی که استخراج می‌شوند قرار است به چه کار آیند، به مدل ارتباطی ندارد. لایه‌ی مدل نه این چیزها را می‌داند و نه در طلب دانستن آن‌ها، ارتباطی با دیگر لایه‌ها برقرار می‌کند.</p>
+</blockquote>
+
+<h2>قانون طلایی مدل‌ها در لاراول</h2>
+
+<p>در لاراول، به ازای هر جدول اطلاعات، یک مدل داریم که مسئول پردازش اطلاعات همان جدول است. </p>
+
+<p>خاطرتان هست که گفتیم نام جدول‌ها در لاراول از اسامی جمع در زبان انگلیسی ساخته می‌شوند؟ </p>
+
+<p>ایده آن است که کلمه‌ی «مدل»‌ به یک رکورد از جدول اشاره کند و به همین دلیل، نام کلاس مدل متناظر با هر جدول، صورت مفرد نام همان جدول است. </p>
+
+<p>بر این اساس، حالا که برای آپولو هوا کردن، دو جدول به نام‌های <code>users</code> و <code>missions</code> ساختیم، دو کلاس از نوع مدل، به ترتیب با نام‌های <code>User</code> و <code>Mission</code> برای آن‌ها لازم داریم.</p>
+
+<h2>دسترسی به مدل‌ها</h2>
+
+<p>اگرچه در معماری استاندارد MVC دسترسی به لایه‌ی مدل تنها از طریق لایه‌ی کنترل میسر است، لاراول چنین محدودیتی را قائل نمی‌شود و از هر کجا که بخواهید، حتی در لایه‌ی نمایش، می‌توانید سراغ مدل‌ها بروید و از متدهای آن استفاده کنید.</p>
+
+<h1>ساخت مدل‌ها</h1>
+
+<p>مدل‌ها کلاس‌هایی هستند که به صورت پیش‌فرض در پوشه‌ی <code>app</code> جای داده می‌شوند و نیم‌اسپیس متناسب با همان پوشه را بر خود می‌گیرند و از کلاس دیگری به نام <code>Model</code> مشتق می‌شوند. </p>
+
+<p>نه من حوصله‌ی آن را دارم که بگویم این کلاس والد کجاست و نه اگر بگویم شما به خاطرش می‌سپارید. خبر خوش آن است که وقتی قرار نیست خودتان را برای ساختن مدل‌ها به زحمت بیاندازید، نیازی هم به حفظ کردن این جزئیات کم‌اهمیت ندارید. </p>
+
+<p>چون در درس پیش (<a href="/laravel-0-to-60/chapter03/lesson05/apollo-tables/">+</a>) جدولی به نام <code>missions</code> ساختیم، به مدلی با نام <code>Mission</code> هم نیاز داریم. پس این مدل را همزمان با من بسازید تا همین طور که در دنیای لاراول پیش می‌رویم، از کار اصلی خودمان که آپولو هوا کردن است، باز نمانیم.</p>
+
+<pre><code class="language-bash">php artisan make:model Mission
+</code></pre>
+
+<p>اجرای دستور بالا در خط فرمان پروژه، کلاسی با نام مورد علاقه‌ی ما می‌سازد و در جای درست قرار می‌دهد و نیم‌اسپیس متناسب را بر آن می‌نهد و از کلاس درست مشتق می‌نماید. </p>
+
+<p>کدی که با دستور بالا ساخته شده و در فایل مدل نوپای ما تزریق می‌شود، چیزی به شکل زیر است:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Mission extends Model
+{
+    //
+}
+</code></pre>
+
+<h2>پوشهٔ مدل‌ها</h2>
+
+<p>آنجا که سخن از <a href="/laravel-0-to-60/chapter02/lesson02/folders/">ساختار پوشه‌های لاراول</a> بود، اشاره کردم که خالق این فریمورک، با دلایلی که برای خودش دارد، به صورت پیش‌فرض جایی برای مدل‌ها در نظر نگرفته و آن‌ها را کف پوشه‌ی <code>app</code> پخش می‌کند که ظاهر ناخوش‌آیندی دارد، اما قابل اصلاح است.</p>
+
+<p>اگرچه دستکاری در مسیر پیش‌فرض لاراول، مستلزم آن است که خودمان حواستان به نیم‌اسپیس‌ها باشد، اما در این مورد خاص ارزشش را دارد.</p>
+
+<p>تنها کاری که هنگام ساخت مدل‌ها باید انجام دهیم، آن است که نامی که برای پوشه‌ی مورد نظر خود در نظر گرفته‌ایم را در دستور آرتیزان ذکر کنیم.</p>
+
+<pre><code class="language-bash">php artisan make:model Models/Mission
+</code></pre>
+
+<p>اجرای دستور بالا در خط فرمان پروژه، کلاسی با نام مورد علاقه‌ی ما، و این بار در پوشه‌ی مورد علاقه‌ی ما می‌سازد و نیم‌اسپیس متناسب را بر آن می‌نهد و همچنان از کلاس درست مشتق می‌نماید. </p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Mission extends Model
+{
+    //
+}
+</code></pre>
+
+<h1>مدل کاربر</h1>
+
+<p>هنگامی که به اتفاق هم مایگرشن‌هایی برای آپولو هوا کردن می‌ساختیم (<a href="/laravel-0-to-60/chapter03/lesson05/apollo-tables/">+</a>)، دیدیم که مایگرشن مربوط به ایجاد جدولی برای اطلاعات کاربران از قبل وجود داشت و ما فقط تغییراتی در آن ایجاد کردیم که نیازهای خاص پروژه‌ی ما را برآورده سازد.</p>
+
+<p>از آنجا که تقریباً تمام پروژه‌های وب در عالم امکان، کاربرانی نیز دارند، لاراول جدول و مدل مورد نیاز برای مدیریت کاربران را به صورت پیش‌فرض در جعبه‌ی خود گذاشته که در بدو نصب قابل استفاده هستند. </p>
+
+<p>شما حالا می‌دانید که نام مدل مربوط به کاربران، <code>User</code> است و طبیعتاً باید در پوشه‌ی <code>app</code> که محل پیش‌فرض لاراول برای نگهداری مدل‌هاست دنبالش بگردید. </p>
+
+<h6 id="models..">اگر هم مثل من دوست دارید که مدل‌ها در جای مشخصی مخصوص به خودشان، مثلاً در پوشه‌ای به نام <code>Models</code> نگهداری شوند، باید زحمت انتقال این کلاس پیش‌فرض را بکشید. من قول می‌دم که ارزشش را داشته باشد.</h6>
+
+<p>از شما می‌خواهم این مدل پیش‌فرض مربوط به کاربران را باز کنید و با مدل مربوط به مأموریت‌ها که به اتفاق هم ساختیم، مقایسه نمایید.</p>
+
+<p>قاعدتاً اولین تفاوتی که چشم شما را می‌گیرد، آن است که در مدل <code>User</code> چیزهایی نوشته شده، اما مدل <code>Mission</code> که خودمان ساختیم، خالی است. فعلاً نگران خالی بودن کلاس خودمان نباشید و به دنبال دومین تفاوت بگردید.</p>
+
+<p>آیا می‌توانید پیش از اشاره‌ی من آن را بیابید؟</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App;
+
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+  ...
+</code></pre>
+
+<h2>قابل اعتبارسنجی!</h2>
+
+<p>مدل <code>User</code>، به جای آن که از کلاس <code>Model</code> مشتق شود، کلاس دیگری را با نام مستعار <code>Authenticatable</code> به عنوان والد خود برگزیده است!</p>
+
+<p>جای نگرانی نیست. خود این کلاس والد، از <code>Model</code> مشتق شده و بنابراین چیزی از دست نرفته است. </p>
+
+<p>نگاهی به داخل این کلاس بیاندازید و ببینید این دست به دست کردن، چه چیز یا چیزهایی را به مدل ما ا‍ضافه کرده است.</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Illuminate\Foundation\Auth;
+
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+
+class User extends Model implements
+    AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
+{
+    use Authenticatable, Authorizable, CanResetPassword;
+}
+</code></pre>
+
+<h5 id="useruser.authenticatableuser..">مراقب باشید نام <code>User</code> در این کلاس واسط، شما را به اشتباه نیاندازد و آن را با مدل <code>User</code> اشتباه نگیرید. در واقع <code>Authenticatable</code> نام مستعاری‌ست که برای پرهیز از هم‌نامی دو کلاس، در مدل <code>User</code> به این کلاس داده شده است. از آنجا که پیش‌فرض کتاب آن است که شما پی‌اچ‌پی را می‌دانید و با مفاهیم شیءگرایی در این زبان آشنا هستید، به همین اشاره بسنده می‌کنم.</h5>
+
+<p>از نیم‌اسپیس و فهرست وابستگی‌های استفاده‌شده گذر کنید و به خط هجدهم بروید، آنجا که سه Trait مورد استفاده قرار گرفته‌اند.</p>
+
+<p>معرکه نیست؟</p>
+
+<p>لاراول، با همان منطق که «تقریباً تمام پروژه‌های وب در عالم امکان، کاربرانی نیز دارند»، مایگرشن و مدلی برای مدیریت کاربران ساخته و جلوتر هم رفته است:</p>
+
+<ul>
+<li>تریت <code>Authenticatable</code>، هر آنچه برای اعتبارسنجی کاربران لازم دارید را به مدل کاربر اضافه می‌کند.</li>
+<li>تریت <code>Authorizable</code>، هر آنچه برای بررسی سطح دسترسی کاربران لازم دارید را به مدل کاربر اضافه می‌کند.</li>
+<li>و تریت <code>CanResetPasswordContract</code>، متدهای لازم برای بازنشانی گذرواژه را به مدل کاربر اضافه می‌کند.</li>
+</ul>
+
+<h6>قضیه به این‌جا ختم نمی‌شود. لاراول کنترلرهای مورد نیاز برای ورود و خروج کاربران و فراموشی رمز عبور را نیز تدارک دیده و برای آن که لطف را تمام کرده باشد، حتی نماهای لازم در لایه‌ی نمایش را نیز آماده کرده است. از همه بهتر آن که تمام این سیستم، تقریباً بدون دخالت شما، قابل استفاده و عملیاتی است! فعلاً عجله نکنید. تک‌تک آن‌ها را بررسی خواهیم کرد.</h6>
+
+<h2>ما چه کنیم؟</h2>
+
+<p>مدل کاربر، با مشتق شدن از کلاس Authenticatable، قابلیت‌هایی که متناسب با کاربران است را بدون جنگ و خون‌ریزی به خود اضافه می‌کند و جز علم به موضوع، کار خاصی لازم نیست انجام دهید. </p>
+
+<p>حالا اگر با هر دلیلی که خودتان می‌دانید (و در حال حاضر برای من بسیار دور از انتظار است)، ترجیح می‌دادید که از این امکانات استفاده نکنید، یا فقط از چندتای آن‌ها استفاده کنید، مختارید مدل <code>User</code> را به میل خود تغییر دهید.</p>
+
+<p>مثلاً اگر می‌خواهید مدل <code>User</code> هم مدلی مثل سایر مدل‌ها باشد و هیچ امکانات اضافه‌ای نداشته باشد، کافی‌ست مثل سایر مدل‌ها، آن را فرزندی از کلاس ‍<code>Model</code> تعریف کنید.</p>
+
+<pre><code class="language-php">class User extends Model 
+{
+    //
+}
+</code></pre>
+
+<p>یا اگر ابزار بهتری برای تعیین سطح دسترسی‌ها نوشته‌اید و نمی‌خواهید مدل <code>User</code> از ابزار پیش‌فرض لاراول در این راه استفاده کنید، کافی‌ست کلاس خود را از همان کلاس <code>Model</code> مشتق کنید و سپس همان traitها (و البته implementationها) که مورد نیازتان هست را به آن اضافه نمایید.</p>
+
+<pre><code class="language-php">class User extends Model implements
+    AuthenticatableContract,
+    CanResetPasswordContract
+{
+    use Authenticatable, CanResetPassword;
+}
+</code></pre>
+
+<p>یا مثلاً ممکن است با دلایلی عجیب و غریب، بخواهید جدول ادمین‌های پروژه‌ی خود را از جدول کاربران جدا کنید و در این صورت  باید برخی از این امکانات را در مدل مربوط به آن جدول هم لحاظ کنید.</p>
+
+<h6>پیشنهاد می‌کنم از این کارها نکنید و اجازه دهید داده‌های تمام کاربران پروژه‌ی شما، اعم از ادمین و غیرادمین، مشتری و مدیرفروش، کارجو و کارآفرین، و به طور کلی هر موجودی از جنس آدمیزاد، در یک جدول متمرکز باشد. هیچ چیز ناخوشایندتر از آن نیست که به شما بگویند برای خرید از فروشگاه آنلاینی که ادمینش هستید، ابتدا باید از حساب کاربری ادمین خود خارج شوید، سپس با شناسه و گذرواژه‌ی دیگرتان به عنوان مشتری وارد شوید و خرید کنید. این برنامه‌ی شماست که باید بتواند میان کاربران و نقش‌های مختلف آن‌ها تفاوت قائل شود. زحمتش را به دوش استفاده‌کنندگان نیاندازید.</h6>
+
+<h2>باز هم پوشهٔ مدل‌ها</h2>
+
+<p>گفتم که به اعتقاد من، و بسیاری از لاراول‌نویسان دیگر، بهتر است مدل‌ها پوشه‌ای برای خود داشته باشند و مثل بی‌خانمان‌ها کف پوشه‌ی <code>app</code> قرار نگیرند. </p>
+
+<p>برای مدل‌های جدید، کافی است نام یک پوشه را (مثلا <code>Models</code>) در دستور آرتیزان قید کنیم. اما برای مدل <code>User‍</code> که از قبل وجود داشت، باید خودمان دست به کار شویم.</p>
+
+<p>اگر می‌خواهید کدهایی که برای آپولو هوا کردن می‌نویسم به کار شما نیز بیایند، با من همراه شوید و این دو تغییر کوچک را اعمال کنید:</p>
+
+<ul>
+<li>ابتدا فایل <code>User.php</code> را از پوشه‌ی <code>app</code> بردارید و در پوشه‌ی <code>app/Modles‍‍</code> قرار دهید.</li>
+<li>بعد نیم‌اسپیس آن را به شکل <code>App\Models‍</code> اصلاح کنید.</li>
+</ul>
+
+<p>همین!</p>
+
+<h1>مدل مایگرشن</h1>
+
+<h4>از یک سو...</h4>
+
+<p>در تقریباً تمام درس‌های فصل سوم، که بیشتر به مفهوم مایگرشن و نحوه‌ی کار با آن می‌پرداختند، از جدولی به نام <code>migrations</code> سخن گفتیم و دانستیم که لاراول، برای نگهداری نام مایگرشن‌های اجراشده و ترتیب برپایی هر یک از آن‌ها، به چنان جدولی نیازمند است. </p>
+
+<h4>از سوی دیگر...</h4>
+
+<p>در ابتدای این فصل، از یک قانون طلایی در ارتباط با مدل‌های لاراول سخن گفتیم.</p>
+
+<blockquote>
+  <p>در لاراول، به ازای هر جدول اطلاعات، یک مدل داریم که مسئول پردازش اطلاعات همان جدول است. </p>
+</blockquote>
+
+<h4>پس...</h4>
+
+<p>لابد باید مدلی به نام <code>Migration</code> داشته باشیم و حتماً انتظار داریم لاراول خودش ترتیب ساخت آن را داده باشد.</p>
+
+<h4>اما این طور نیست!</h4>
+
+<p>چنین مدلی در کار نیست و ما هم آن را نخواهیم ساخت، چون اساساً این ما نیستیم که به آن نیاز داریم! </p>
+
+<p>اجازه بدهید لاراول را در نحوه‌ی ارتباط برقرار کردن با جدولی که خودش برای کارهای خودش ساخته تنها بگذاریم.</p>
+
+<p>مطمئنم که از پس آن برمی‌آید.</p>
+
+<h1>جان کلام</h1>
+
+<p>در این درس مهم و کوتاه، اولین گام‌ها را بر لایه‌ی مدل در لاراول برداشتیم و آموختیم که هر جدول به یک مدل نیاز دارد که نام مفرد همان جدول را بر خود دارد. در ادامه، یک مدل برای خودمان ساختیم و دانستیم که مدل مورد نیاز برای مدیریت کاربران ما از پیش ساخته شده و با تفاوت‌های اندکی که با مدل معمولی دارد آشنا شدیم.</p>
+
+<p>مدل‌هایی را که در این درس دیدیم، چه ‍<code>Mission</code> که خودمان ساختیم و چه <code>User</code> که از قبل وجود داشت، بدون یک خط «چیز» اضافه، به حال خود رها کردیم. در درس بعد خواهیم دید که چگونه همین مدل‌های بدوی و صفرکیلومتر، می‌توانند کوئری‌های اولیه‌ی ساخت و ویرایش و حذف رکورد را برای ما بسازند.</p>
+
+<p>پروژه‌ی آپولوی شما در پایان این درس باید چیزی شبیه <a href="https://github.com/dutymess/apollo-0-to-60/tree/chapter-04-lesson-01">این</a> باشد.</p>
+
+<p>یک بار دیگر، به همان دلیلی که در صدر این درس اشاره کردم، سال نو را به شما تبریک نمی‌گویم و در عوض از شما می‌خواهم تا آماده شدن درس بعدی، با ستاره زدن روی <a href="https://github.com/dutymess/laravel-0-to-60">پروژه‌ی این کتاب در گیتهاب</a>، به من انگیزه بدهید، یا با روش‌هایی که در <a href="/laravel-0-to-60/chapter00/lesson04/feedback/">صفحه‌ی بازخورد</a> گفته‌ام، ایرادهای نوشته‌ام را نشانم دهید، یا سری به صفحه‌ی <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a> بزنید و بدون توجه به تقارن با عید نوروز، با عمل به رهنمودهای آن، خوشحالم کنید.</p>
+
+    </div>
+  
+
+
+</div>
+
+<div class="section">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="/laravel-0-to-60/chapter03/lesson05/apollo-tables/" class="pagination-previous button is-primary is-outlined">
+    →
+    جدول‌هایی برای آپولو
+  </a>
+
+
+
+
+  <a href="/laravel-0-to-60/chapter/lesson/z_plans/" class="pagination-next button is-primary is-outlined">
+    z_plans
+    ←
+  </a>
+    </nav>
+</div>
+    </div>
+
+  </section>
+
+  <footer class="columns hero section is-dark has-text-centered">
+        <div class="container ">
+            <div class="columns">
+
+                <div class="column">
+                    <div class="footer-header">
+                       به این جاها سر بزنید
+                    </div>
+                    <ul class="related-links has-text-centered">
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson03/support/">حمایت از کتاب</a>
+                        </li>
+                        <li>
+                            <a href="/laravel-0-to-60/chapter00/lesson05/publish/">مجوز انتشار</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dutymess/laravel-0-to-60/issues" target="_blank">گزارش مشکلات</a>
+                        </li>
+                        <li>
+                          <a href="https://virgool.io/@taha" target="_blank">وبلاگ من در ویرگول</a>
+                        </li>
+                        <li>
+                          <a href="https://blog.dutymess.ir" target="_blank">آن یکی وبلاگ من</a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/dutymessIr" target="_blank">و سرانجام، در توییتر</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="footer-header">
+                    لاراول از صفر تا شصت
+                    </div>
+                    <div class="socials">
+                      <a href="/laravel-0-to-60">
+                        <img class="cover" src="/laravel-0-to-60/images/cover-small.jpg">
+                      </a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="footer-header">
+                      از درس‌های جدید آگاه شوید
+                    </div>
+
+                    <form action="https://github.us17.list-manage.com/subscribe/post?u=8118b4a1f2130d821eb534012&amp;id=a8b16a6c37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate is-inline-block" target="_blank" novalidate>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input name="EMAIL" class="input" type="email" placeholder="عضویت در خبرنامه">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    عضویت
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    </form>
+
+                    <div class="text">
+                      برای ارسال خبرنامه از سرویس
+                      mailChimp
+                      بهره می‌برم و فقط خبرهای مرتبط با همین کتاب را اطلاع‌رسانی می‌کنم.
+                      از نشانی‌ها حتی برای پروژه‌های بعدی و مشابه خودم هم استفاده نمی‌کنم
+                      چه برسد به آن که تبلیغ و هرزنامه بفرستم یا
+                      خدای ناکرده در اختیار کس دیگری قرار دهم.
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="has-text-centered credit">
+              <div>
+              کتاب
+              <a href="https://github.com/dutymess/laravel-0-to-60" target="_blank">
+              «لاراول، از صفر تا شصت»
+              </a>
+              با مجوز
+              <a href="/laravel-0-to-60/chapter00/lesson05/publish/" >
+                کرییتیو کامنز
+              </a>
+              به صورت رایگان و آزاد منتشر می‌شود و حقوق آن، در چارچوب مجوز یادشده، متعلق به نویسنده
+              <a href="https://virgool.io/@taha" target="_blank">
+                (طه کامکار)
+              </a>
+              است.
+
+              </div>
+              <div>
+                ارائه شده بر بستر
+                <a href="https://miraxy.github.io/doc-fa/" target="_blank">میرا</a>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="/laravel-0-to-60/static/js/jquery.min.js"></script>
+<script src="/laravel-0-to-60/static/js/highlight.pack.js"></script>
+<script src="/laravel-0-to-60/static/js/highlightjs-line-numbers.min.js"></script>
+<script src="/laravel-0-to-60/static/js/app.js"></script>
+
+
+</body>
+</html>
