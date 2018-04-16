@@ -249,6 +249,11 @@ em.open-icon::after{
 	}
 }
 
+#sidebar a.active{
+	color: #145cd4 !important;
+	font-weight: bold !important;
+	cursor: text;
+}
 
 @media (max-width: 768px) {
 	#sidebar{
