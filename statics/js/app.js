@@ -12,6 +12,12 @@ hljs.initLineNumbersOnLoad();
 
      $('.sidebar_toggle').on('click',function () {
          $('#sidebar').toggleClass('is-open');
-     })
+     });
+
+     /*
+      * Get Window Pathname
+      * */
+     var pathname = window.location.pathname;
+     $('#sidebar a[href="'+pathname+'"]').addClass('active');
 
  }); //End Of siaf!
